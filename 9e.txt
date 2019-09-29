@@ -1,0 +1,4 @@
+login
+agent
+createacct 123 456 testName
+logout

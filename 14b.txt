@@ -1,0 +1,14 @@
+login
+agent
+deleteacct newAccNum newAccName
+logout
+
+login
+agent
+deleteacct existAccNum newAccName
+logout
+
+login
+agent
+deleteacct newAccNum existAccName
+logout

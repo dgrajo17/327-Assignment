@@ -1,0 +1,4 @@
+login
+agent
+createacct 12AB567 testName
+logout

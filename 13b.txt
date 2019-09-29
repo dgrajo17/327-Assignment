@@ -1,0 +1,4 @@
+login
+atm
+deleteacct 1234567 testName
+logout

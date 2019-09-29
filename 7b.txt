@@ -1,0 +1,11 @@
+login
+logout
+atm
+agent
+createacct accNum accName
+deleteacct accNum accName
+deposit accNum amount
+withdraw accNum amount
+transfer accNum otherAccNum amount
+asdasdasf
+123452

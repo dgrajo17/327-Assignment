@@ -1,0 +1,4 @@
+login
+atm
+createacct 1234567 testName
+logout
