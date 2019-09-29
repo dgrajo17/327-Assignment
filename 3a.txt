@@ -1,0 +1,7 @@
+login
+ATM
+createacct accNum accName
+deleteacct accNum accName
+ATM
+Agent
+logout

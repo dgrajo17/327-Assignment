@@ -1,0 +1,18 @@
+login
+atm
+logout
+
+login
+atm
+deposit accNum amount
+logout
+
+login
+atm
+withdraw accNum amount
+logout
+
+login 
+atm
+transfer accNum otherAccNum amount
+logout

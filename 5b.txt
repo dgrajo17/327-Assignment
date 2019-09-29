@@ -1,0 +1,27 @@
+login
+amt
+logout
+
+login
+agnt
+logout
+
+login
+createacct accNum accName
+logout
+
+login
+deleteacct accNum accName
+logout
+
+login
+deposit accNum amount
+logout
+
+login
+withdraw accNum amount
+logout
+
+login
+transfer accNum otherAccNum amount
+logout
