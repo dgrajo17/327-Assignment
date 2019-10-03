@@ -1,0 +1,14 @@
+login
+atm
+deposit accNum 200000
+deposit accNum 200000
+deposit accNum 100000
+logout
+
+login
+atm
+deposit accNum 200000
+deposit accNum 200000
+deposit accNum 100000
+deposit otherAccNum 200000
+logout

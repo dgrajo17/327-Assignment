@@ -1,0 +1,7 @@
+login
+atm
+deposit accNum 200000
+deposit accNum 200000
+deposit accNum 200000
+logout
+

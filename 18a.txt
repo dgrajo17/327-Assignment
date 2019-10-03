@@ -1,0 +1,4 @@
+login
+agent
+deposit accNum 1000
+logout
