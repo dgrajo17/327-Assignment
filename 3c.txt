@@ -1,5 +1,5 @@
 login
 atm
 lgout
-depost accNum amount
+depost accNum 1000
 logout
