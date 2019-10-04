@@ -1,5 +1,4 @@
 login
 agent
-deleteacct nonexNum testName
-deleteacct testNum nonexaccName
+deleteacct 1234567 testName
 logout
