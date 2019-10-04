@@ -1,7 +1,7 @@
 login
 agent
-deleteacct accNum accName
-deposit accNum amount
-withdraw accNum amount
-transfer accNum otherAccNum amount
+deleteacct 1234567 testName
+deposit 1234567 amount
+withdraw 1234567 amount
+transfer 1234567 otherAccNum amount
 logout
