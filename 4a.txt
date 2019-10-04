@@ -1,28 +1,8 @@
 login
 agent
-logout
-
-login
-agent
 createacct accNum accName
-logout
-
-login
-agent
 deposit accNum amount
-logout
-
-login
-agent
 withdraw accNum amount
-logout
-
-login 
-agent
 transfer accNum otherAccNum amount
-logout
-
-login
-agent
 deleteacct accNum accName
 logout
