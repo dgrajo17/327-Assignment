@@ -1,0 +1,4 @@
+DEP accNum amount accName
+WDR accNum amount accName
+XFR accNum amount otherAccNum accName
+EOS accNum accName
