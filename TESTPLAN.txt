@@ -1,0 +1,19 @@
+TEST PLAN:
+
+The team has organized the tests by having a folder for every feature. This will be the simplest and cleanest organization structure,
+as it will be easy for the team to stick to the structure and make sure all tests are completed and working.
+
+The tests will be executed as shell scripts. Currently, the input files/input command files use variables names such as accName, accNum etc. 
+This is done to avoid having to hard code the test values for every individual case, especially for tests where a large number of tests could
+be beneficial. When the tests are actually being conducted, these variables will be replaced by the necessary inputs through the use of an
+input stream.
+
+The outputs will be validated through comparison to their expected output files through comparison,
+i.e. 
+if (output == expectedOutput):
+    return true
+else:
+    return false
+
+The results of these tests will be stored and organized in text files using an output stream, which will then be stored with the original 
+test cases to ensure no failed cases get lost or forgotten about, and to allow easier comparison with future test runs.
