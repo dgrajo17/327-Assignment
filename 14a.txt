@@ -1,5 +1,5 @@
 login
 agent
-deleteacct exNum accName
-deleteacct testNum exaccName
+deleteacct nonexNum testName
+deleteacct testNum nonexaccName
 logout
