@@ -1,0 +1,5 @@
+login 
+atm
+transfer accNum otherAccNum 500000
+transfer accNum otherAccNum 500000
+logout
