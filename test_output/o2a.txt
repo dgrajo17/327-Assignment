@@ -1,0 +1,3 @@
+login successful
+session ON (acccount xxxxxxx)
+ERROR: another session ON (account xxxxxxx) 
