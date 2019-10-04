@@ -1,14 +1,6 @@
 login
 agent
 deleteacct newAccNum newAccName
-logout
-
-login
-agent
 deleteacct accNum newAccName
-logout
-
-login
-agent
 deleteacct newAccNum accName
 logout
