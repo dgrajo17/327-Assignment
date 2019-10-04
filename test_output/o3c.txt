@@ -1,0 +1,5 @@
+login sucessful
+ATM Session ON
+Error: unidentified command
+Error: unidentified command
+logged out
