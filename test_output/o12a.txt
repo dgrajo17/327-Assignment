@@ -1,0 +1,5 @@
+login successful
+Agent session ON
+transaction complete (create account)
+Error: cannot conduct transaction in newly created account
+logged out

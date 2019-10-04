@@ -1,0 +1,4 @@
+login successful
+Agent session ON
+transaction complete (create account)
+logged out

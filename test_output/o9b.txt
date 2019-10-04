@@ -1,0 +1,4 @@
+login successful
+Agent session ON
+Error: cannot create account number starting with 0
+logged out
