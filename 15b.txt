@@ -1,0 +1,7 @@
+login
+agent
+deleteacct accNum accName
+deposit accNum amount
+withdraw accNum amount
+transfer accNum otherAccNum amount
+logout

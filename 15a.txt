@@ -1,0 +1,5 @@
+login
+agent
+deleteacct accNum accName
+createacct accNum accName
+logout
