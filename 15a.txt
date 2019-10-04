@@ -1,5 +1,5 @@
 login
 agent
-deleteacct accNum accName
-createacct accNum accName
+deleteacct 1234567 testName
+createacct 1234567 testName
 logout
