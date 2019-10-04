@@ -1,4 +1,4 @@
 login
 agent
-deleteacct existAccNum existAccName
+deleteacct accNum accName
 logout

@@ -1,0 +1,6 @@
+login
+atm
+transfer accNum fakeOtherAccNum 1000
+transfer fakeAccNum otherAccNum 1000
+transfer fakeAccNum fakeOtherAccNum 1000
+logout

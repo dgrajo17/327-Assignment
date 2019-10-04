@@ -1,0 +1,6 @@
+login
+agent
+withdraw accNum 100a
+withdraw accNum 10&2
+withdraw accNum 10 29
+logout

@@ -5,10 +5,10 @@ logout
 
 login
 agent
-deleteacct existAccNum newAccName
+deleteacct accNum newAccName
 logout
 
 login
 agent
-deleteacct newAccNum existAccName
+deleteacct newAccNum accName
 logout

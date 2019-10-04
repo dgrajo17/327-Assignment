@@ -1,0 +1,4 @@
+login
+agent
+withdraw accNum 1000
+logout

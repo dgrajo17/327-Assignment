@@ -1,0 +1,4 @@
+login
+atm
+withdraw newAccNum 1000
+logout

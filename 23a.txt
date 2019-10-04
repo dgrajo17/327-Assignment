@@ -1,0 +1,14 @@
+login
+atm
+withdraw accNum 200000
+withdraw accNum 200000
+withdraw accNum 100000
+logout
+
+login
+atm
+withdraw accNum 200000
+withdraw accNum 200000
+withdraw accNum 100000
+withdraw otherAccNum 200000
+logout
