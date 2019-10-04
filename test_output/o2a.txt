@@ -1,3 +1,2 @@
 login successful
-session ON (acccount xxxxxxx)
-ERROR: another session ON (account xxxxxxx) 
+ERROR: a user already logged in
