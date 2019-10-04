@@ -1,0 +1,7 @@
+login successful
+ATM Session ON
+Error: transaction not accepted under current session (ATM) 
+Error: transaction not accepted under current session (ATM)
+Error: transaction not accepted under current session (ATM)
+Error: transaction not accepted under current session (ATM)
+logged out

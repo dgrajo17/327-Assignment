@@ -1,0 +1,6 @@
+NEW accNum 000 0000000 accName
+DEP accNum amount 0000000 ***
+WDR accNum amount 0000000 ***
+XFR accNum amount otherAccNum ***
+DEL accNum 000 0000000 accName
+EOS accNum 000 0000000 ***
