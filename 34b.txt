@@ -1,0 +1,4 @@
+login
+atm
+deposit  accNum   1000
+logout

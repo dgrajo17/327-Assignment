@@ -1,0 +1,12 @@
+login
+atm
+deposit accNum 1000
+logout
+
+login
+atm
+deposit accNumOther 1000
+logout
+
+#where accNum is at the beginning of account list and accNumOther is at bottom
+#time complexity will be analyzed
