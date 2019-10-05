@@ -1,0 +1,5 @@
+login successful
+ATM Session ON
+Error: Can't transfer to the same account
+Error: Can't transfer to the same account
+logged out

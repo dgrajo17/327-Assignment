@@ -1,4 +1,0 @@
-login successful
-ATM Session ON
-Error: Could not withdraw amount. Account does not exist. 
-logged out

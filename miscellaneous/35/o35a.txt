@@ -1,3 +1,0 @@
-login successful.
-ATM session ON
-Error: ATM mode is active. Cannot switch to Agent.

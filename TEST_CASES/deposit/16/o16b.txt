@@ -1,0 +1,4 @@
+login successful
+ATM Session ON
+Error: Could not deposit amount. Account does not exist. 
+logged out

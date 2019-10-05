@@ -1,8 +1,0 @@
-login successful.
-ATM session ON
-Deposit successful
-logged out
-login successful.
-ATM session ON
-Deposit successful
-logged out

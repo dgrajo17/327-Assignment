@@ -1,0 +1,4 @@
+login successful
+ATM Session ON
+Error: At least one of the accounts does not exist.
+logged out

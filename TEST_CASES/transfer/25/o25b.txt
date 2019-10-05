@@ -1,0 +1,6 @@
+login successful
+ATM Session ON
+Error: Transfer amount is not valid. Must be between 0 and 1000000
+Error: Transfer amount is not valid. Must be between 0 and 1000000
+Error: Transfer amount is not valid. Must be between 0 and 1000000
+logged out

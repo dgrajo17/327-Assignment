@@ -1,5 +1,0 @@
-login sucessful
-Agent Session ON
-Error: transaction not accepted under current session (Agent) 
-Error: transaction not accepted under current session (Agent)
-logged out

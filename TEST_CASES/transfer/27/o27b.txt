@@ -1,0 +1,5 @@
+login successful
+ATM Session ON
+Transferred successfully
+Error: Could not transfer amount as it would exceed daily limit of 1000000 
+logged out

@@ -1,4 +1,0 @@
-login successful
-Agent session ON
-Error: account number can only contain numeral digits
-logged out

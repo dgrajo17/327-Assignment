@@ -1,7 +1,0 @@
-login successful
-Agent session ON
-transaction complete (delete account)
-Error: account does not exist
-Error: account does not exist
-Error: account does not exist
-logged out

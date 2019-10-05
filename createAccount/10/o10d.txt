@@ -1,4 +1,0 @@
-login successful
-Agent session ON
-Error: cannot create account - (existingName) already exists
-logged out

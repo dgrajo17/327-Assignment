@@ -1,5 +1,0 @@
-login successful
-ATM Session ON
-Error: please enter number between 0-100000
-Error: please enter number between 0-100000
-logged out

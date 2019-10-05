@@ -1,3 +1,0 @@
-DEP accNum amount 0000000 ***
-DEP accNum amount 0000000 ***
-DEP accNum amount 0000000 ***

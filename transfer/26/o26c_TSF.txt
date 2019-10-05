@@ -1,2 +1,0 @@
-XFR accNum 99999999 otherAccNum ***
-EOS 0000000 000 0000000 ***

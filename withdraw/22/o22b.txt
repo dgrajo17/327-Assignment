@@ -1,6 +1,0 @@
-login successful
-Agent Session ON
-Error: please enter number between 0-999999999
-Error: please enter number between 0-999999999
-Error: please enter number between 0-999999999
-logged out

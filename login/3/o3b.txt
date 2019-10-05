@@ -1,6 +1,0 @@
-login sucessful
-ATM Session ON
-transaction complete (deposit)
-transaction complete (withdraw)
-transaction complete (transfer)
-logged out

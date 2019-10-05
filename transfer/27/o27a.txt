@@ -1,5 +1,0 @@
-login successful
-ATM Session ON
-Transferred successfully
-Transferred successfully
-logged out
