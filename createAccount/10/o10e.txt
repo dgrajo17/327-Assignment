@@ -1,0 +1,5 @@
+login successful
+Agent session ON
+Error: account number cannot begin or end with an empty spaces
+Error: account number cannot begin or end with an empty spaces
+logged out

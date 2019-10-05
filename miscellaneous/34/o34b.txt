@@ -1,0 +1,4 @@
+login successful.
+ATM session ON
+Invalid input
+logged out

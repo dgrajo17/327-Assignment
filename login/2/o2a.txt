@@ -1,0 +1,2 @@
+login successful
+ERROR: a user already logged in

@@ -1,0 +1,8 @@
+login sucessful
+Agent Session ON
+transaction complete (create account)
+transaction complete (deposit)
+transaction complete (withdraw)
+transaction complete (transfer)
+transaction complete (delete account)
+logged out

@@ -1,0 +1,4 @@
+login successful
+Agent session ON
+Error: account number cannot contain empty spaces
+logged out

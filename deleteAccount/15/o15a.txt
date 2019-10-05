@@ -1,0 +1,5 @@
+login successful
+Agent session ON
+transaction complete (delete account)
+transaction complete (create account)
+logged out
