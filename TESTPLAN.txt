@@ -11,9 +11,9 @@ input stream.
 The outputs will be validated through comparison to their expected output files through comparison,
 i.e. 
 if (output == expectedOutput):
-    return true
+    return successMessage
 else:
-    return false
+    return output
 
 The results of these tests will be stored and organized in text files using an output stream, which will then be stored with the original 
 test cases to ensure no failed cases get lost or forgotten about, and to allow easier comparison with future test runs.
