@@ -1,0 +1,17 @@
+login successful
+ATM Session ON
+Withdrew successfully
+Withdrew successfully 
+Withdrew successfully 
+Withdrew successfully 
+Withdrew successfully   
+logged out
+login successful
+ATM Session ON
+Withdrew successfully
+Withdrew successfully 
+Withdrew successfully 
+Withdrew successfully
+Withdrew successfully 
+Withdrew successfully   
+logged out
