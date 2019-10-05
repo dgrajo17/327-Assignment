@@ -1,0 +1,5 @@
+login
+ATM
+createacct accNum accName
+deposit accNum 1000
+logout

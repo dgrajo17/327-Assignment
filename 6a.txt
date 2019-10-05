@@ -1,0 +1,3 @@
+login
+ATM
+deleteacct accNum accName
