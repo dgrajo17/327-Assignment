@@ -1,0 +1,6 @@
+login successful
+ATM Session ON
+Deposited successfully  
+Deposited successfully
+Error: Could not deposit this amount as it would exceed the daily limit
+logged out

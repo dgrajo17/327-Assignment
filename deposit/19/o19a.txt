@@ -1,0 +1,13 @@
+login successful
+ATM Session ON
+Deposited successfully  
+Deposited successfully
+Deposited successfully
+logged out
+login successful
+ATM Session ON
+Deposited successfully
+Deposited successfully
+Deposited successfully
+Deposited successfully  
+logged out
