@@ -1,0 +1,4 @@
+login successful
+ATM Session ON
+Withdrew successfully 
+logged out
