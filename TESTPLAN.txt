@@ -17,3 +17,10 @@ else:
 
 The results of these tests will be stored and organized in text files using an output stream, which will then be stored with the original 
 test cases to ensure no failed cases get lost or forgotten about, and to allow easier comparison with future test runs.
+
+ADDED CASES:
+
+The team also found several cases important to test that were not explicitly stated in the project requirements/constraints.
+These are cases 28 through 35. These additional cases are found under the sections of TRANSFER, TSF, and MISCELLANEOUS.
+These cases were added because if they went untested, they could have caused unexplained errors that cannot be attributed to
+any other existing test case.
