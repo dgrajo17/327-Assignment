@@ -8,5 +8,6 @@ atm
 deposit accNumOther 1000
 logout
 
-#where accNum is at the beginning of account list and accNumOther is at bottom
-#time complexity will be analyzed
+#where accNum is at the beginning of account list and accNumOther is at bottom of a long list
+#time complexity will be analyzed by either using a stopwatch or preferrably running the shell script
+#with a time command on the two different sessions to see how long they take and compare
