@@ -2,7 +2,9 @@ login successful.
 ATM session ON
 Deposit successful
 logged out
+# Some sort of execution time information
 login successful.
 ATM session ON
 Deposit successful
 logged out
+# Some sort of execution time information
