@@ -1,0 +1,194 @@
+import re
+
+def accNumDecOnly(string):
+    restricted = re.compile(r'[^0-9]')
+    string = restricted.search(string)
+    return not bool(string)
+
+
+def accNameAlphaNum(string):
+    restricted = re.compile(r'[^a-zA-Z0-9]')
+    string = restricted.search(string)
+    return not bool(string)
+
+def invalidInput(inputAction):
+    print("Invalid input: " + inputAction)
+
+
+def handleKeyboardInput():
+    action = input("Enter command: ")
+    valid = actionHandler(action)
+    if valid == 0:
+        invalidInput(action)
+
+
+def login():
+    global status
+    status = "login"
+    print("Status: " + status)
+    #Read the valid accounts file -> replace demofile.txt with valid accounts file
+    global vaf
+    vaf = open("vaf.txt", "r")
+    # Loops through the file and reads every line (useful for reading accounts)
+    #for x in f:
+    #    print(x)
+
+
+def logout():
+    global status
+    status = "logout"
+    print("Status: " + status)
+    global tsf
+    tsf = open("tsf.txt", "w") # "a" will append, "w" will overwrite
+    tsf.write("Testing")
+    tsf.close()
+    #print TSF
+
+
+def setatm():
+    global status
+    status = "atm"
+    print("Status: " + status)
+
+
+def setagent():
+    global status
+    status = "agent"
+    print("Status: " + status)
+
+
+def createAccount(action):
+    inputCommand = action.split(" ", 2);
+    accNum = inputCommand[1]
+    accName = inputCommand[2]
+    if len(accNum) != 7:
+        print("1")
+        return 0
+    if accNum[0] == 0:
+        print("2")
+        return 0
+    if accNumDecOnly(accNum) == False:
+        print("3")
+        return 0
+    #if accNum not diff
+    if len(accName) < 3 or len(accName) > 30:
+        print("4")
+        return 0
+    if accName[0] == " " or accName[-1] == " ":
+        print("5")
+        return 0
+    if accNameAlphaNum(accName) == False:
+        print("6")
+        return 0
+    if len(accNum) == 7:
+        print("7")
+        if accNum[0] != 0:
+            print("8")
+            if accNumDecOnly(accNum) == True:
+                print("9")
+                if len(accName) >= 3 and len(accName) <= 30:
+                    print("10")
+                    if accName[0] != " " or accName[-1] != " ":
+                        print("11")
+                        if accNameAlphaNum(accName) == True:
+                            print("12")
+                            #create the account successfully
+                            print("Success")
+                            print("Account " + accNum + " created successfully.")
+
+
+def deleteAccount(action):
+    print("hello")
+
+
+def deposit(action):
+    print("hello")
+
+
+def withdraw(action):
+    print("hello")
+
+
+def transfer(action):
+    print("hello")
+
+
+
+def actionHandler(action):  # Handle action
+    global status
+    if status == "logout":
+        if action == "login":
+            login()
+            return 1
+        else:
+            return 0
+    elif status == "login":
+        if action == "login":
+            return 0
+        elif action == "logout":
+            logout()
+            return 1
+        elif action == "atm":
+            setatm()
+            return 1
+        elif action == "agent":
+            setagent()
+            return 1
+        else:
+            return 0
+    elif status == "atm":
+        if action == "logout":
+            logout()
+            return 1
+        elif action == "atm":
+            return 0
+        elif action == "agent":
+            return 0
+        elif "createAccount" in action:
+            return 0
+        elif "deleteAccount" in action:
+            return 0
+        elif "deposit" in action:
+            deposit(action)
+            return 1
+        elif "withdraw" in action:
+            withdraw(action)
+            return 1
+        elif "transfer" in action:
+            transfer(action)
+            return 1
+    elif status == "agent":
+        if action == "logout":
+            logout()
+            return 1
+        elif action == "atm":
+            return 0
+        elif action == "agent":
+            return 0
+        elif "createAccount" in action:
+            print("hello")
+            createAccount(action)
+            return 1
+        elif "deleteAccount" in action:
+            deleteAccount(action)
+            return 1
+        elif "deposit" in action:
+            deposit(action)
+            return 1
+        elif "withdraw" in action:
+            withdraw(action)
+            return 1
+        elif "transfer" in action:
+            transfer(action)
+            return 1
+
+
+
+#val = input("Enter your value: ")
+if __name__ == "__main__":
+    status = "logout"
+    while 1:
+        handleKeyboardInput()
+
+
+#print(val)
