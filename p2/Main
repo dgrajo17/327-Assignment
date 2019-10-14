@@ -11,15 +11,23 @@ def accNameAlphaNum(string):
     string = restricted.search(string)
     return not bool(string)
 
-def invalidInput(inputAction):
+def invalidInputA():
+    print("Invalid input")
+
+
+def invalidInputB(inputAction):
     print("Invalid input: " + inputAction)
+
+
+def errorMsg(error):
+    print(error)
 
 
 def handleKeyboardInput():
     action = input("Enter command: ")
     valid = actionHandler(action)
     if valid == 0:
-        invalidInput(action)
+        invalidInputB(action)
 
 
 def login():
@@ -58,47 +66,167 @@ def setagent():
 
 
 def createAccount(action):
+    exists = False
     inputCommand = action.split(" ", 2);
-    accNum = inputCommand[1]
-    accName = inputCommand[2]
-    if len(accNum) != 7:
-        print("1")
+    # Make sure length is 3 to avoid crashes
+    if len(inputCommand) == 3:
+        accNum = inputCommand[1]
+        accName = inputCommand[2]
+        if len(accNum) != 7:
+            print("1")
+            return 0
+        if accNum[0] == 0:
+            print("2")
+            return 0
+        if accNumDecOnly(accNum) == False:
+            print("3")
+            return 0
+        if len(accName) < 3 or len(accName) > 30:
+            print("4")
+            return 0
+        if accName[0] == " " or accName[-1] == " ":
+            print("5")
+            return 0
+        if accNameAlphaNum(accName) == False:
+            print("6")
+            return 0
+        #Two possible approaches - A) above is blacklisting B) below is whitelisting (recommend B)
+        if len(accNum) == 7:
+            print("7")
+            if accNum[0] != 0:
+                print("8")
+                if accNumDecOnly(accNum) == True:
+                    print("9")
+                    for x in vaf:
+                        if str(accNum) == x.strip():
+                            exists = True
+                            break
+                    if exists == False:
+                        if len(accName) >= 3 and len(accName) <= 30:
+                            print("10")
+                            if accName[0] != " " or accName[-1] != " ":
+                                print("11")
+                                if accNameAlphaNum(accName) == True:
+                                    print("12")
+                                    vaf1 = open("vaf.txt", "r")  # "a" will append, "w" will overwrite
+                                    lines = vaf1.readlines()
+                                    vaf1.close()
+                                    vaf1 = open("vaf.txt", "w")
+                                    for line in lines:
+                                        if line.strip("\n") != "0000000":
+                                            vaf1.write(line)
+                                    vaf1.close()
+                                    vaf1 = open("vaf.txt", "a")
+                                    vaf1.write(accNum)
+                                    vaf1.write("\n" + "0000000")
+                                    vaf1.close()
+                                    print("Account " + accNum + " created successfully.")
+                                    return 1
+                                else:
+                                    errorMsg("Alphanumeric characters only for account name")
+                                    return 0
+                            else:
+                                errorMsg("Account name cannot start or end with a space/blank character")
+                                return 0
+                        else:
+                            errorMsg("Account name should be 3-30 alphanumeric characters long")
+                            return 0
+                    else:
+                        errorMsg("Account number already exists")
+                        return 0
+                else:
+                    errorMsg("Account number must be decimals only")
+                    return 0
+            else:
+                errorMsg("Accout number must not begin with a 0")
+                return 0
+        else:
+            errorMsg("Account number must be 7 decimals long")
+            return 0
+    else:
+        errorMsg("Not enough arguments. Please follow the format: createAccount 1234567 AccountName")
         return 0
-    if accNum[0] == 0:
-        print("2")
-        return 0
-    if accNumDecOnly(accNum) == False:
-        print("3")
-        return 0
-    #if accNum not diff
-    if len(accName) < 3 or len(accName) > 30:
-        print("4")
-        return 0
-    if accName[0] == " " or accName[-1] == " ":
-        print("5")
-        return 0
-    if accNameAlphaNum(accName) == False:
-        print("6")
-        return 0
-    if len(accNum) == 7:
-        print("7")
-        if accNum[0] != 0:
-            print("8")
-            if accNumDecOnly(accNum) == True:
-                print("9")
-                if len(accName) >= 3 and len(accName) <= 30:
-                    print("10")
-                    if accName[0] != " " or accName[-1] != " ":
-                        print("11")
-                        if accNameAlphaNum(accName) == True:
-                            print("12")
-                            #create the account successfully
-                            print("Success")
-                            print("Account " + accNum + " created successfully.")
 
 
 def deleteAccount(action):
-    print("hello")
+    print("Delete")
+    exists = False
+    inputCommand = action.split(" ", 2);
+    # Make sure length is 3 to avoid crashes
+    if len(inputCommand) == 3:
+        accNum = inputCommand[1]
+        accName = inputCommand[2]
+        if len(accNum) != 7:
+            print("1")
+            return 0
+        if accNum[0] == 0:
+            print("2")
+            return 0
+        if accNumDecOnly(accNum) == False:
+            print("3")
+            return 0
+        if len(accName) < 3 or len(accName) > 30:
+            print("4")
+            return 0
+        if accName[0] == " " or accName[-1] == " ":
+            print("5")
+            return 0
+        if accNameAlphaNum(accName) == False:
+            print("6")
+            return 0
+        #Two possible approaches - A) above is blacklisting B) below is whitelisting (recommend B)
+        if len(accNum) == 7:
+            print("7")
+            if accNum[0] != 0:
+                print("8")
+                if accNumDecOnly(accNum) == True:
+                    print("9")
+                    for x in vaf:
+                        if str(accNum) == x.strip():
+                            exists = True
+                            break
+                    if exists == True:
+                        if len(accName) >= 3 and len(accName) <= 30:
+                            print("10")
+                            if accName[0] != " " or accName[-1] != " ":
+                                print("11")
+                                if accNameAlphaNum(accName) == True:
+                                    print("12")
+                                    #delete the account successfully
+                                    vaf1 = open("vaf.txt", "r")  # "a" will append, "w" will overwrite
+                                    lines = vaf1.readlines()
+                                    vaf1.close()
+                                    vaf1 = open("vaf.txt", "w")
+                                    for line in lines:
+                                        if line.strip("\n") != str(accNum):
+                                            vaf1.write(line)
+                                    vaf1.close()
+                                    print("Account " + accNum + " deleted successfully.")
+                                    return 1
+                                else:
+                                    errorMsg("Alphanumeric characters only for account name")
+                                    return 0
+                            else:
+                                errorMsg("Account name cannot start or end with a space/blank character")
+                                return 0
+                        else:
+                            errorMsg("Account name should be 3-30 alphanumeric characters long")
+                            return 0
+                    else:
+                        errorMsg("Account number does not exist")
+                        return 0
+                else:
+                    errorMsg("Account number must be decimals only")
+                    return 0
+            else:
+                errorMsg("Accout number must not begin with a 0")
+                return 0
+        else:
+            errorMsg("Account number must be 7 decimals long")
+            return 0
+    else:
+        errorMsg("Not enough arguments. Please follow the format: deleteAccount 1234567 AccountName")
+        return 0
 
 
 def deposit(action):
@@ -112,10 +240,11 @@ def withdraw(action):
 def transfer(action):
     print("hello")
 
-
-
 def actionHandler(action):  # Handle action
     global status
+    if action == "whereami":
+        print("Action Handler")
+        return 1
     if status == "logout":
         if action == "login":
             login()
@@ -157,6 +286,8 @@ def actionHandler(action):  # Handle action
         elif "transfer" in action:
             transfer(action)
             return 1
+        else:
+            return 0
     elif status == "agent":
         if action == "logout":
             logout()
@@ -166,7 +297,6 @@ def actionHandler(action):  # Handle action
         elif action == "agent":
             return 0
         elif "createAccount" in action:
-            print("hello")
             createAccount(action)
             return 1
         elif "deleteAccount" in action:
@@ -181,6 +311,9 @@ def actionHandler(action):  # Handle action
         elif "transfer" in action:
             transfer(action)
             return 1
+        else:
+            return 0
+
 
 
 
