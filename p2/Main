@@ -6,10 +6,60 @@ def accNumDecOnly(string):
     return not bool(string)
 
 
+def accNumValid(accNum):
+        if len(accNum) == 7:
+            print("7")
+            if accNum[0] != "0":
+                print("8")
+                if accNumDecOnly(accNum) == True:
+                    print("9")
+                    return 1
+                else:
+                    errorMsg("Account number must be decimals only")
+                    return 0
+            else:
+                errorMsg("Accout number must not begin with a 0")
+                return 0
+        else:
+            errorMsg("Account number must be 7 decimals long")
+            return 0
+
+
+def accNumExists(accNum):
+    exists = False
+    for x in vaf:
+        if str(accNum) == x.strip():
+            exists = True
+            break
+    if exists == True:
+        return 1
+    elif exists == False:
+        return 0
+
+
 def accNameAlphaNum(string):
     restricted = re.compile(r'[^a-zA-Z0-9]')
     string = restricted.search(string)
     return not bool(string)
+
+
+def accNameValid(accName):
+    if len(accName) >= 3 and len(accName) <= 30:
+        print("10")
+        if accName[0] != " " or accName[-1] != " ":
+            print("11")
+            if accNameAlphaNum(accName) == True:
+                return 1
+            else:
+                errorMsg("Alphanumeric characters only for account name")
+                return 0
+        else:
+            errorMsg("Account name cannot start or end with a space/blank character")
+            return 0
+    else:
+        errorMsg("Account name should be 3-30 alphanumeric characters long")
+        return 0
+
 
 def invalidInputA():
     print("Invalid input")
@@ -38,7 +88,7 @@ def login():
     global vaf
     vaf = open("vaf.txt", "r")
     # Loops through the file and reads every line (useful for reading accounts)
-    #for x in f:
+    #for x in vaf:
     #    print(x)
 
 
@@ -46,11 +96,14 @@ def logout():
     global status
     status = "logout"
     print("Status: " + status)
-    global tsf
-    tsf = open("tsf.txt", "w") # "a" will append, "w" will overwrite
-    tsf.write("Testing")
+    vaf.close()
+    tsf = open("tsf.txt", "a")  # Using "a" will append, "w" will overwrite
+    tsf.write("DEL " + accNum + " " + "000" + " " + "0000000" + " " + accName) # end the tsf with an EOS transaction code (append to end)
+    # Print TSF
+    for line in tsf:
+        print(line)
+    # Close TSF
     tsf.close()
-    #print TSF
 
 
 def setatm():
@@ -66,163 +119,82 @@ def setagent():
 
 
 def createAccount(action):
-    exists = False
     inputCommand = action.split(" ", 2);
-    # Make sure length is 3 to avoid crashes
+    #Make sure length is 3 to avoid crashes
     if len(inputCommand) == 3:
         accNum = inputCommand[1]
         accName = inputCommand[2]
-        if len(accNum) != 7:
-            print("1")
-            return 0
-        if accNum[0] == 0:
-            print("2")
-            return 0
-        if accNumDecOnly(accNum) == False:
-            print("3")
-            return 0
-        if len(accName) < 3 or len(accName) > 30:
-            print("4")
-            return 0
-        if accName[0] == " " or accName[-1] == " ":
-            print("5")
-            return 0
-        if accNameAlphaNum(accName) == False:
-            print("6")
-            return 0
-        #Two possible approaches - A) above is blacklisting B) below is whitelisting (recommend B)
-        if len(accNum) == 7:
-            print("7")
-            if accNum[0] != 0:
-                print("8")
-                if accNumDecOnly(accNum) == True:
-                    print("9")
-                    for x in vaf:
-                        if str(accNum) == x.strip():
-                            exists = True
-                            break
-                    if exists == False:
-                        if len(accName) >= 3 and len(accName) <= 30:
-                            print("10")
-                            if accName[0] != " " or accName[-1] != " ":
-                                print("11")
-                                if accNameAlphaNum(accName) == True:
-                                    print("12")
-                                    vaf1 = open("vaf.txt", "r")  # "a" will append, "w" will overwrite
-                                    lines = vaf1.readlines()
-                                    vaf1.close()
-                                    vaf1 = open("vaf.txt", "w")
-                                    for line in lines:
-                                        if line.strip("\n") != "0000000":
-                                            vaf1.write(line)
-                                    vaf1.close()
-                                    vaf1 = open("vaf.txt", "a")
-                                    vaf1.write(accNum)
-                                    vaf1.write("\n" + "0000000")
-                                    vaf1.close()
-                                    print("Account " + accNum + " created successfully.")
-                                    return 1
-                                else:
-                                    errorMsg("Alphanumeric characters only for account name")
-                                    return 0
-                            else:
-                                errorMsg("Account name cannot start or end with a space/blank character")
-                                return 0
-                        else:
-                            errorMsg("Account name should be 3-30 alphanumeric characters long")
-                            return 0
-                    else:
-                        errorMsg("Account number already exists")
-                        return 0
+        if accNumValid(accNum) == 1:
+            if accNumExists(accNum) == 0:
+                if accNameValid(accName) == 1:
+                    print("12")
+                    vaf1 = open("vaf.txt", "r")  # "a" will append, "w" will overwrite
+                    lines = vaf1.readlines()
+                    vaf1.close()
+                    vaf1 = open("vaf.txt", "w")
+                    for line in lines:
+                        if line.strip("\n") != "0000000":
+                            vaf1.write(line)
+                    vaf1.close()
+                    vaf1 = open("vaf.txt", "a")
+                    vaf1.write(accNum)
+                    vaf1.write("\n" + "0000000")
+                    vaf1.close()
+                    # Save to tsf file
+                    tsf1 = open("tsf.txt", "a")  # append info to end of TSF
+                    tsf1.write("NEW " + accNum + " " + "000" + " " + "0000000" + " " + accName)
+                    tsf1.close()
+                    print("Account " + accNum + " created successfully.")
+                    return 1
                 else:
-                    errorMsg("Account number must be decimals only")
                     return 0
             else:
-                errorMsg("Accout number must not begin with a 0")
+                errorMsg("Account number exists")
                 return 0
         else:
-            errorMsg("Account number must be 7 decimals long")
             return 0
     else:
         errorMsg("Not enough arguments. Please follow the format: createAccount 1234567 AccountName")
         return 0
 
 
+# Note about delete - If you created a new account, you cannot delete it within the same session
+# I, personally, thought this was a bug but in the requirements it says 'no transactions on this new account should be accepted this session'
+# So, you know what, pretty good, close enough
+# But if you wanted to know the reason, it's because login() opens the vaf.txt file and stores it in a variable vaf
+# When you do createAccount(), it updates the vaf.txt file with the new account number, BUT the contents of the variable vaf is still the old vaf.txt
+# So even though vaf.txt is new, vaf the variable still contains the old account numbers
 def deleteAccount(action):
-    print("Delete")
-    exists = False
     inputCommand = action.split(" ", 2);
     # Make sure length is 3 to avoid crashes
     if len(inputCommand) == 3:
         accNum = inputCommand[1]
         accName = inputCommand[2]
-        if len(accNum) != 7:
-            print("1")
-            return 0
-        if accNum[0] == 0:
-            print("2")
-            return 0
-        if accNumDecOnly(accNum) == False:
-            print("3")
-            return 0
-        if len(accName) < 3 or len(accName) > 30:
-            print("4")
-            return 0
-        if accName[0] == " " or accName[-1] == " ":
-            print("5")
-            return 0
-        if accNameAlphaNum(accName) == False:
-            print("6")
-            return 0
-        #Two possible approaches - A) above is blacklisting B) below is whitelisting (recommend B)
-        if len(accNum) == 7:
-            print("7")
-            if accNum[0] != 0:
-                print("8")
-                if accNumDecOnly(accNum) == True:
-                    print("9")
-                    for x in vaf:
-                        if str(accNum) == x.strip():
-                            exists = True
-                            break
-                    if exists == True:
-                        if len(accName) >= 3 and len(accName) <= 30:
-                            print("10")
-                            if accName[0] != " " or accName[-1] != " ":
-                                print("11")
-                                if accNameAlphaNum(accName) == True:
-                                    print("12")
-                                    #delete the account successfully
-                                    vaf1 = open("vaf.txt", "r")  # "a" will append, "w" will overwrite
-                                    lines = vaf1.readlines()
-                                    vaf1.close()
-                                    vaf1 = open("vaf.txt", "w")
-                                    for line in lines:
-                                        if line.strip("\n") != str(accNum):
-                                            vaf1.write(line)
-                                    vaf1.close()
-                                    print("Account " + accNum + " deleted successfully.")
-                                    return 1
-                                else:
-                                    errorMsg("Alphanumeric characters only for account name")
-                                    return 0
-                            else:
-                                errorMsg("Account name cannot start or end with a space/blank character")
-                                return 0
-                        else:
-                            errorMsg("Account name should be 3-30 alphanumeric characters long")
-                            return 0
-                    else:
-                        errorMsg("Account number does not exist")
-                        return 0
+        if accNumValid(accNum) == 1:
+            if accNumExists(accNum) == 1:
+                if accNameValid(accName) == 1:
+                    print("12")
+                    # delete the account successfully
+                    vaf1 = open("vaf.txt", "r")  # "a" will append, "w" will overwrite
+                    lines = vaf1.readlines()
+                    vaf1.close()
+                    vaf1 = open("vaf.txt", "w")
+                    for line in lines:
+                        if line.strip("\n") != str(accNum):
+                            vaf1.write(line)
+                    vaf1.close()
+                    # Save to tsf file
+                    tsf1 = open("tsf.txt", "a") #append info to end of TSF
+                    tsf1.write("DEL " + accNum + " " + "000" + " " + "0000000" + " " + accName)
+                    tsf1.close()
+                    print("Account " + accNum + " deleted successfully.")
+                    return 1
                 else:
-                    errorMsg("Account number must be decimals only")
                     return 0
             else:
-                errorMsg("Accout number must not begin with a 0")
+                errorMsg("Account number does not exist")
                 return 0
         else:
-            errorMsg("Account number must be 7 decimals long")
             return 0
     else:
         errorMsg("Not enough arguments. Please follow the format: deleteAccount 1234567 AccountName")
@@ -230,7 +202,51 @@ def deleteAccount(action):
 
 
 def deposit(action):
-    print("hello")
+    print("Deposit")
+    global status
+    if status == "atm":
+        limit = 200000 # please double check to see if this is the correct number (REMEMBER IT CONTAINS CENTS)
+    elif status == "agent":
+        limit = 99999999999 # please double check to see if this is the correct number (REMEMBER IT CONTAINS CENTS)
+    else:
+        return 0
+    inputCommand = action.split(" ", 2);
+    # Make sure length is 3 to avoid crashes
+    if len(inputCommand) == 3:
+        accNum = inputCommand[1]
+        amount = inputCommand[2]
+        if accNumValid(accNum) == 1:
+            if accNumExists(accNum) == 1:
+                if accNumDecOnly(amount) == True:
+                    if len(amount) > 3 and len(amount) < 8:
+                        if int(amount) <= limit:
+                            try:
+                                tsf1 = open("tsf.txt", "a")
+                                tsf1.write("DEP " + accNum + " " + amount + " " + "0000000" + " " + "***")
+                                tsf1.close()
+                                # For deposits, withdrawals, and transactions, all we have to deal with rn is the tsf
+                                # The actual addition, subtraction from the accounts will be handled in the backend
+                                # By reading the contents of the TSF
+                            except:
+                                errorMsg("Something went wrong opening the tsf.txt")
+                                return 0
+                        else:
+                            errorMsg("Amount exceeds the deposit limit")
+                            return 0
+                    else:
+                        errorMsg("Amount should be between 3 and 8 decmal digits")
+                        return 0
+                else:
+                    errorMsg("Amount should be decimals only")
+                    return 0
+            else:
+                errorMsg("Account number does not exist")
+                return 0
+        else:
+            return 0
+    else:
+        errorMsg("Not enough arguments. Please follow the format: createAccount 1234567 AccountName")
+        return 0
 
 
 def withdraw(action):
