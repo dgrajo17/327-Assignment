@@ -5,7 +5,7 @@ def accNumDecOnly(string):
     string = restricted.search(string)
     return not bool(string)
 
-
+#check if account num is valid
 def accNumValid(accNum):
         if len(accNum) == 7:
             print("7")
@@ -26,15 +26,22 @@ def accNumValid(accNum):
 
 
 def accNumExists(accNum):
-    exists = False
+    exists = 0
     for x in vaf:
         if str(accNum) == x.strip():
-            exists = True
+            exists = 1
             break
-    if exists == True:
-        return 1
-    elif exists == False:
-        return 0
+    return exists
+
+def getAccBalance(accNum):
+    #pseudo - backend doesn't exist yet
+    amount = 10000 #temp to allow testing
+    for i in range (0, len(backend)):
+        if backend[i].num == accNum:
+            amount = backend[i].amount
+            daily = backend[i].dailyAmount
+            break
+    return amount, dailyAmount
 
 
 def accNameAlphaNum(string):
@@ -164,6 +171,7 @@ def createAccount(action):
 # But if you wanted to know the reason, it's because login() opens the vaf.txt file and stores it in a variable vaf
 # When you do createAccount(), it updates the vaf.txt file with the new account number, BUT the contents of the variable vaf is still the old vaf.txt
 # So even though vaf.txt is new, vaf the variable still contains the old account numbers
+
 def deleteAccount(action):
     inputCommand = action.split(" ", 2);
     # Make sure length is 3 to avoid crashes
@@ -205,9 +213,9 @@ def deposit(action):
     print("Deposit")
     global status
     if status == "atm":
-        limit = 200000 # please double check to see if this is the correct number (REMEMBER IT CONTAINS CENTS)
+        limit = 200000 #from assignment requirements
     elif status == "agent":
-        limit = 99999999999 # please double check to see if this is the correct number (REMEMBER IT CONTAINS CENTS)
+        limit = 99999999 #from assignment requirements
     else:
         return 0
     inputCommand = action.split(" ", 2);
@@ -224,9 +232,7 @@ def deposit(action):
                                 tsf1 = open("tsf.txt", "a")
                                 tsf1.write("DEP " + accNum + " " + amount + " " + "0000000" + " " + "***")
                                 tsf1.close()
-                                # For deposits, withdrawals, and transactions, all we have to deal with rn is the tsf
-                                # The actual addition, subtraction from the accounts will be handled in the backend
-                                # By reading the contents of the TSF
+                                #WILL NEED TO WRITE TO BACKEND HERE IN NEXT PART
                             except:
                                 errorMsg("Something went wrong opening the tsf.txt")
                                 return 0
@@ -234,7 +240,7 @@ def deposit(action):
                             errorMsg("Amount exceeds the deposit limit")
                             return 0
                     else:
-                        errorMsg("Amount should be between 3 and 8 decmal digits")
+                        errorMsg("Amount should be between 3 and 8 decimal digits")
                         return 0
                 else:
                     errorMsg("Amount should be decimals only")
@@ -245,12 +251,55 @@ def deposit(action):
         else:
             return 0
     else:
-        errorMsg("Not enough arguments. Please follow the format: createAccount 1234567 AccountName")
+        errorMsg("Not enough arguments. Please follow the format: deposit accountNumber amount")
         return 0
 
 
 def withdraw(action):
-    print("hello")
+    print("Withdraw")
+    global status
+    if status == "atm":
+        limit = 200000 #from assignment requirements
+    elif status == "agent":
+        limit = 99999999 #from assignment requirements
+    else:
+        return 0
+    inputCommand = action.split(" ", 2);
+    # Make sure length is 3 to avoid crashes
+    if len(inputCommand) == 3:
+        accNum = inputCommand[1]
+        amount = inputCommand[2]
+        if accNumValid(accNum) == 1:
+            if accNumExists(accNum) == 1:
+                if accNumDecOnly(amount) == True:
+                    if len(amount) > 3 and len(amount) < 8:
+                        currentAmount, dailyAmount = getAccBalance(accNum)
+                        if int(amount) <= min(limit,currentAmount,(500000-dailyAmount)): #check all restrictions
+                            try:
+                                tsf1 = open("tsf.txt", "a")
+                                tsf1.write("WDR " + accNum + " " + amount + " " + "0000000" + " " + "***")
+                                tsf1.close()
+                                #WILL NEED TO WRITE NEW AMOUNT TO BACKEND AS WELL AS UPDATE THE DAILY
+                            except:
+                                errorMsg("Something went wrong opening the tsf.txt")
+                                return 0
+                        else:
+                            errorMsg("Amount exceeds the withdrawal limit.")
+                            return 0
+                    else:
+                        errorMsg("Amount should be between 3 and 8 decimal digits")
+                        return 0
+                else:
+                    errorMsg("Amount should be decimals only")
+                    return 0
+            else:
+                errorMsg("Account number does not exist")
+                return 0
+        else:
+            return 0
+    else:
+        errorMsg("Not enough arguments. Please follow the format: withdraw accountNumber amount")
+        return 0
 
 
 def transfer(action):
