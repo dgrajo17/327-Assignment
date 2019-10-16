@@ -226,7 +226,7 @@ def deposit(action):
         if accNumValid(accNum) == 1:
             if accNumExists(accNum) == 1:
                 if accNumDecOnly(amount) == True:
-                    if len(amount) > 3 and len(amount) < 8:
+                    if len(amount) >= 3 and len(amount) <= 8: #are these supposed to be <= or just <
                         if int(amount) <= limit:
                             try:
                                 tsf1 = open("tsf.txt", "a")
@@ -272,12 +272,12 @@ def withdraw(action):
         if accNumValid(accNum) == 1:
             if accNumExists(accNum) == 1:
                 if accNumDecOnly(amount) == True:
-                    if len(amount) > 3 and len(amount) < 8:
+                    if len(amount) >= 3 and len(amount) <= 8: #are these supposed to be <= or just <
                         currentAmount, dailyAmount = getAccBalance(accNum)
                         if int(amount) <= min(limit,currentAmount,(500000-dailyAmount)): #check all restrictions
                             try:
                                 tsf1 = open("tsf.txt", "a")
-                                tsf1.write("WDR " + accNum + " " + amount + " " + "0000000" + " " + "***")
+                                tsf1.write("WDR " + "0000000" + " " + amount + " " + "accNum" + " " + "***")
                                 tsf1.close()
                                 #WILL NEED TO WRITE NEW AMOUNT TO BACKEND AS WELL AS UPDATE THE DAILY
                             except:
@@ -303,7 +303,62 @@ def withdraw(action):
 
 
 def transfer(action):
-    print("hello")
+    print("Transfer")
+    global status
+    if status == "atm":
+        limit = 200000 #from assignment requirements
+    elif status == "agent":
+        limit = 99999999 #from assignment requirements
+    else:
+        return 0
+    inputCommand = action.split(" ", 2);
+    # Make sure length is 3 to avoid crashes
+    if len(inputCommand) == 4:
+        accNumOut = inputCommand[1]
+        accNumIn = inputCommand[2]
+        amount = inputCommand[3]
+        if accNumValid(accNumOut) == 1:
+            if accNumExists(accNumOut) == 1:
+                if accNumValid(accNumIn) == 1:
+                    if accNumExists(accNumIn) == 1:
+                        if accNumOut != accNumIn:
+                            if accNumDecOnly(amount) == True:
+                                if len(amount) >= 3 and len(amount) <= 8: #are these supposed to be <= or just < ???
+                                    currentAmount, dailyAmount = getAccBalance(accNumOut)
+                                    if int(amount) <= min(limit,currentAmount,(1000000-dailyAmount)): #check all restrictions
+                                        try:
+                                            tsf1 = open("tsf.txt", "a")
+                                            tsf1.write("XFR " + accNumIn + " " + amount + " " + "accNumOut" + " " + "***")
+                                            tsf1.close()
+                                            #WILL NEED TO WRITE NEW AMOUNT TO BACKEND AS WELL AS UPDATE THE DAILY
+                                        except:
+                                            errorMsg("Something went wrong opening the tsf.txt")
+                                            return 0
+                                    else:
+                                        errorMsg("Amount exceeds the withdrawal limit.")
+                                        return 0
+                                else:
+                                    errorMsg("Amount should be between 3 and 8 decimal digits")
+                                    return 0
+                            else:
+                                errorMsg("Amount should be decimals only")
+                                return 0
+                        else:
+                            errorMsg("Account numbers shouldn't be the same")
+                            return 0
+                    else:
+                        errorMsg("First account number does not exist")
+                        return 0
+                else:
+                    return 0
+            else:
+                errorMsg("Second account number does not exist")
+                return 0
+        else:
+            return 0
+    else:
+        errorMsg("Not enough arguments. Please follow the format: transfer accountNumberFrom accountNumberTo amount")
+        return 0
 
 def actionHandler(action):  # Handle action
     global status
