@@ -1,20 +1,6 @@
-#327 QUINTERAC Front End Rapid Prototype (Part 2)
+#327 QUINTERAC Front End Rapid Prototype (Assignment 2)
 #The Xtreme Team
 #Oct 18, 2019
-
-
-# Program Description :
-# The overall intention of the program is to implement all of the features of the front end
-# and to provide a way to interact with the front end through a command line interface and 
-# conduct full testing. Certain back end reliant features were simplified and replaced so that
-# the front end could seamlessly work. Main program continuously processes user keyboard input 
-# does programmed behaviour
-# 1 input file vaf.txt containing a valid accounts file with any number of accounts is required in the working directory
-# Accounts are added and removed from the file since backend is not coded yet
-# 1 output file tsf.txt is required that is written by the program  on logout with the transaction from the day
-
-# Run the program by typing the "this_file_name".py in the terminal in the working directory
-# Shell scripts can be run on top of this program to feed  a sequence of commands into the program
 
 import re
 import os
@@ -56,11 +42,9 @@ class Accounts:
         return exists
 
     #get account balance and daily transaction information an account
-    #backend doesn't exist right no, so this is pseudo for this draft
     # Transaction type 1= deposit, 2 = withdraw, 3 = transfer
     def getAccBalance(self,accNum, transactionType, backendDict):
-        amount = 10000 #temp to allow testing
-        dailyAmount = [0,0,0]
+        dailyAmount = []
         amount = backendDict[accNum].amount
         dailyAmount.append(backendDict[accNum].dailyAmountDeposit)
         dailyAmount.append(backendDict[accNum].dailyAmountWithdraw)
@@ -117,15 +101,17 @@ class Error:
     def errorMsg(self,error):
         print(error)
 
-
+# Class takes user inputs and handles actions like loggining in and depositing
+# It keeps the state of the program for the day (mode, valid accounts list, transaction message to write)
+#  and ensures only valid inputs and state transitions are allowed
 class Actions:
     def __init__(self):
         self.accountsList = dict() # Use hashtable so that finding account number is constant time
         self.toWrite = [] # Transaction file statements to write after logout statement is executed
         self.backendDict = dict() #temporary backend dictionary only for testing frontend
-        self.status = "logout"
-        self.error = Error()
-        self.account = Accounts()
+        self.status = "logout" #Current status of the program
+        self.error = Error()  #Error object for printing error messages
+        self.account = Accounts()  #Accounts object for processing account names and numbers
 
     #handle input from user
     def handleKeyboardInput(self):
@@ -145,11 +131,12 @@ class Actions:
         vaf = open(r"C:\Users\hyper\source\repos\vaf.txt", "r")
         self.toWrite.clear() # Clear statements to write to tsf
         #Clear and initialize new hashtable/dictionairy 
+        # This ensures that only accounts present at login will allow transactions even if new ones are added
         self.accountsList.clear()
         self.backendDict.clear()
         vaf.seek(0) 
         for x in vaf:
-            self.accountsList[x.strip()] = 0
+            self.accountsList[x.strip()] = 0   
             self.backendDict[x.strip()] = Backend()
         # Loops through the file and reads every line (useful for reading accounts)
         #for x in vaf:
@@ -223,8 +210,6 @@ class Actions:
             self.error.errorMsg("Not enough arguments. Please follow the format: createAccount 1234567 AccountName")
             return 0
 
-
-    #Restrictions: account must have no money in it, can't delete and add in same session
     #delete an existing account
     def deleteAccount(self,action):
         inputCommand = action.split(" ", 2);
@@ -247,6 +232,7 @@ class Actions:
                         vaf1.close()
                         # Save to tsf file
                         self.toWrite.append("DEL " + accNum + " " + "000" + " " + "0000000" + " " + accName+"\n")
+                        del self.accountsList[accNum]  # Delete account from valid accounts list so that you can't do transactions on it
                         print("Account " + accNum + " deleted successfully.")
                         return 1
                     else:
@@ -274,10 +260,10 @@ class Actions:
         if len(inputCommand) == 3:
             accNum = inputCommand[1]
             amount = inputCommand[2]
-            if self.account.accNumValid(accNum,self.error) == 1: #make sure account number is valid
+            if self.account.accNumValid(accNum,self.error) == 1: #make sure account number is valid ... i don't think we need this one, all it changes is error message
                 if self.account.accNumExists(accNum,self.accountsList) == 1: #make sure account actually exists
                     if self.account.accNumDecOnly(amount) == True: #make sure amount is valid
-                        if len(amount) >= 3 and len(amount) <= 8:
+                        if len(amount) >= 3 and len(amount) <= 8: #are these supposed to be <= or just <
                             currentAmount, dailyAmount = self.account.getAccBalance(accNum,1,self.backendDict)                                               
                             if int(amount) <= min(limit,currentAmount,(500000-dailyAmount)):
                                     self.toWrite.append("DEP " + accNum + " " + amount + " " + "0000000" + " " + "***"+"\n")
@@ -314,15 +300,14 @@ class Actions:
         if len(inputCommand) == 3: #(wdr, accnum, amount)
             accNum = inputCommand[1]
             amount = inputCommand[2]
-            if self.account.accNumValid(accNum,self.error) == 1: 
-                if self.account.accNumExists(accNum,self.accountsList) == 1: #make sure acc number exists 
+            if self.account.accNumValid(accNum,self.error) == 1: #not sure we need this, see deposit
+                if self.account.accNumExists(accNum,self.accountsList) == 1: #make sure acc number exists THIS IS THE IMPORTANT CHECK
                     if self.account.accNumDecOnly(amount) == True: #make sure amount is decimal
-                        if len(amount) >= 3 and len(amount) <= 8: 
+                        if len(amount) >= 3 and len(amount) <= 8: #are these supposed to be <= or just <
                             currentAmount, dailyAmount = self.account.getAccBalance(accNum,2,self.backendDict) 
                             if int(amount) <= min(limit,currentAmount,(500000-dailyAmount)): #check all restrictions
                                 self.toWrite.append("WDR " + "0000000" + " " + amount + " " + accNum + " " + "***"+"\n")
                                 self.account.updateDailyAmount(accNum,int(amount),2,self.backendDict)
-                                #WILL NEED TO WRITE NEW AMOUNT TO BACKEND AS WELL AS UPDATE THE DAILY
                             else:
                                 self.error.errorMsg("Amount exceeds the withdrawal limit.")
                                 return 0
@@ -351,18 +336,18 @@ class Actions:
         else:
             return 0
         inputCommand = action.split(" ", 3);
-        # Make sure length is 4 to avoid crashes
+        # Make sure length is 3 to avoid crashes
         if len(inputCommand) == 4: #(xfr, accnumout, accnumin, amount)
             accNumOut = inputCommand[1]
             accNumIn = inputCommand[2]
             amount = inputCommand[3]
-            if self.account.accNumValid(accNumOut,self.error) == 1: #make sure all account numbers exist and are valid
+            if self.account.accNumValid(accNumOut,self.error) == 1: #make sure all account numbers exist and are valid - may not need all these, see deposit
                 if self.account.accNumExists(accNumOut,self.accountsList) == 1:
                     if self.account.accNumValid(accNumIn,self.error) == 1:
                         if self.account.accNumExists(accNumIn,self.accountsList) == 1:
                             if accNumOut != accNumIn:
                                 if self.account.accNumDecOnly(amount) == True:
-                                    if len(amount) >= 3 and len(amount) <= 8:
+                                    if len(amount) >= 3 and len(amount) <= 8: #are these supposed to be <= or just < ???
                                         currentAmount, dailyAmount = self.account.getAccBalance(accNumOut,3,self.backendDict) #get account information
                                         if int(amount) <= min(limit,currentAmount,(1000000-dailyAmount)): #check all restrictions to make sure account has money to withdraw
                                             self.toWrite.append("XFR " + accNumIn + " " + amount + " " + accNumOut + " " + "***"+"\n")
@@ -477,16 +462,29 @@ class Backend:
     self.dailyAmountWithdraw = 0
     self.dailyAmountTransfer = 0
 
+#val = input("Enter your value: ")
+
 # Main Function, runs continuously 
+
+#           Main Description :
+# The overall intention of the program is to implement all of the features of the front end
+# and to provide a way to interact with the front end through a command line interface and 
+# conduct full testing. Certain back end reliant features were simplified and replaced so that
+# the front end could seamlessly work. Main program continuously processes user keyboard input 
+# does programmed behaviour
+# 1 input file vaf.txt containing a valid accounts file with any number of accounts is required in the working directory
+# Accounts are added and removed from the file since backend is not coded yet
+# 1 output file tsf.txt is required that is written by the program  on logout with the transaction from the day
+
+# Run the program by typing the "this_file_name".py in the terminal in the working directory
+# Shell scripts can be run on top of this program to feed  a sequence of commands into the program
 
 if __name__ == "__main__":
     print(os.getcwd())
     status = "logout"
     print("Welcome")
     print("Please Login to Begin Transactions")
-    #accountsList = dict() # Use hashtable so that finding account number is constant time
-    # toWrite = [] # Transaction file statements to write after logout statement is executed
-    #backendDict = dict() #temporary backend dictionary only for testing frontend
-    mainClass = Actions()
+    mainClass = Actions() # Create object to be able to begin processing front end actions
     while 1:
         mainClass.handleKeyboardInput()
+
