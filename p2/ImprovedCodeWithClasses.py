@@ -1,4 +1,4 @@
-#327 QUINTERAC Front End Rapid Prototype (Assignment 2)
+#327 QUINTERAC Front End Rapid Prototype (Part 2)
 #The Xtreme Team
 #Oct 18, 2019
 
