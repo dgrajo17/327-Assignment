@@ -3,8 +3,7 @@
 #Oct 18, 2019
 
 import re
-import os
-
+import sys
 
 #Contains useful functions of processing the validity and presence of account numbers and names and holds and updates account information
 class Accounts:
@@ -17,11 +16,11 @@ class Accounts:
     #check if account num is valid
     def accNumValid(self,accNum,error):
             if len(accNum) == 7: #length must be 7
-                print("7")
+                #print("7")
                 if accNum[0] != "0": #must not begin with zero
-                    print("8")
+                    #print("8")
                     if self.accNumDecOnly(accNum) == True:
-                        print("9")
+                        #print("9")
                         return 1
                     else:
                         error.errorMsg("Account number must be decimals only")
@@ -72,9 +71,9 @@ class Accounts:
     #see if account name is valid
     def accNameValid(self,accName,error):
         if len(accName) >= 3 and len(accName) <= 30: #make sure name is correct length
-            print("10")
+            #print("10")
             if accName[0] != " " or accName[-1] != " ": #must start and end with acceptable characters
-                print("11")
+                #print("11")
                 if self.accNameAlphaNum(accName) == True:
                     return 1
                 else:
@@ -112,6 +111,8 @@ class Actions:
         self.status = "logout" #Current status of the program
         self.error = Error()  #Error object for printing error messages
         self.account = Accounts()  #Accounts object for processing account names and numbers
+        self.vafFileName = sys.argv[1] #First command line argument, name of vaf file
+        self.tsfFileName = sys.argv[2] #Second command line argument, name of tsf file
 
     #handle input from user
     def handleKeyboardInput(self):
@@ -128,7 +129,7 @@ class Actions:
         print("Status: " + self.status)
         #Read the valid accounts file -> replace demofile.txt with valid accounts file
         global vaf
-        vaf = open(r"C:\Users\hyper\source\repos\vaf.txt", "r")
+        vaf = open(str(self.vafFileName), "r")
         self.toWrite.clear() # Clear statements to write to tsf
         #Clear and initialize new hashtable/dictionairy 
         # This ensures that only accounts present at login will allow transactions even if new ones are added
@@ -138,9 +139,7 @@ class Actions:
         for x in vaf:
             self.accountsList[x.strip()] = 0   
             self.backendDict[x.strip()] = Backend()
-        # Loops through the file and reads every line (useful for reading accounts)
-        #for x in vaf:
-        #    print(x)
+
 
     #logout method, logs out and writes all of the days transactions to the TSF
     def logout(self):
@@ -148,7 +147,7 @@ class Actions:
         self.status = "logout"
         print("Status: " + self.status)
         vaf.close()
-        tsf = open(r"C:\Users\hyper\source\repos\tsf.txt", "w+")  # Using "a" will append, "w" will overwrite
+        tsf = open(str(self.tsfFileName), "w+")  # Using "a" will append, "w" will overwrite
         for entry in self.toWrite:
             tsf.write(entry)
         tsf.write("EOS " + "0000000" + " " + "000" + " " + "0000000" + " " + "***\n") # end the tsf with an EOS transaction code (append to end)
@@ -183,15 +182,15 @@ class Actions:
                     if self.account.accNameValid(accName,self.error) == 1:
                         print("12")
                         #write new account to VAF
-                        vaf1 = open(r"C:\Users\hyper\source\repos\vaf.txt", "r")  # "a" will append, "w" will overwrite
+                        vaf1 = open(str(self.vafFileName), "r")  # "a" will append, "w" will overwrite
                         lines = vaf1.readlines()
                         vaf1.close()
-                        vaf1 = open(r"C:\Users\hyper\source\repos\vaf.txt", "w")
+                        vaf1 = open(str(self.vafFileName), "w")
                         for line in lines:
                             if line.strip("\n") != "0000000": #temporarily update VAF without using backend, will be removed when back end is programmed
                                 vaf1.write(line)
                         vaf1.close()
-                        vaf1 = open(r"C:\Users\hyper\source\repos\vaf.txt", "a")
+                        vaf1 = open(str(self.vafFileName), "a")
                         vaf1.write(accNum)
                         vaf1.write("\n" + "0000000")
                         vaf1.close()
@@ -220,12 +219,12 @@ class Actions:
             if self.account.accNumValid(accNum,self.error) == 1: #make sure account number is valid
                 if self.account.accNumExists(accNum,self.accountsList) == 1: #make sure account name is valid
                     if self.account.accNameValid(accName,self.error) == 1:
-                        print("12")
+                        #print("12")
                         # delete the account successfully, write to VAF
-                        vaf1 = open(r"C:\Users\hyper\source\repos\vaf.txt", "r")  # "a" will append, "w" will overwrite
+                        vaf1 = open(str(self.vafFileName), "r")  # "a" will append, "w" will overwrite
                         lines = vaf1.readlines()
                         vaf1.close()
-                        vaf1 = open(r"C:\Users\hyper\source\repos\vaf.txt", "w")
+                        vaf1 = open(str(self.vafFileName), "w")
                         for line in lines:
                             if line.strip("\n") != str(accNum): #temporarily update VAF without using backend, will be changed
                                 vaf1.write(line)
@@ -462,7 +461,6 @@ class Backend:
     self.dailyAmountWithdraw = 0
     self.dailyAmountTransfer = 0
 
-#val = input("Enter your value: ")
 
 # Main Function, runs continuously 
 
@@ -476,11 +474,11 @@ class Backend:
 # Accounts are added and removed from the file since backend is not coded yet
 # 1 output file tsf.txt is required that is written by the program  on logout with the transaction from the day
 
-# Run the program by typing the "this_file_name".py in the terminal in the working directory
-# Shell scripts can be run on top of this program to feed  a sequence of commands into the program
+# Run the program by typing "python SourceCode.py" along with the names of the two files mentioned above in the command line terminal 
+# vaf file should be first, tsf second, no quotations needed. Should be present in the working directory 
+# Shell scripts can be run on top of this program to feed  a sequence of commands into the program and to trigger running the script
 
 if __name__ == "__main__":
-    print(os.getcwd())
     status = "logout"
     print("Welcome")
     print("Please Login to Begin Transactions")
