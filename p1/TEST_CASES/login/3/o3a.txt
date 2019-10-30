@@ -1,5 +1,5 @@
-login successful
-ATM Session ON
+Status: login
+Status: atm
 Invalid input: createacct accNum accName
 Invalid input: deleteacct accNum accName
 Invalid input: ATM
