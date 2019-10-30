@@ -1,7 +1,7 @@
 login
-ATM
-createacct accNum accName
-deleteacct accNum accName
-ATM
-Agent
+atm
+createAccount accNum accName
+deleteAccount accNum accName
+atm
+agent
 logout
