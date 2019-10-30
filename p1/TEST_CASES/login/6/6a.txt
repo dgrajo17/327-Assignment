@@ -1,3 +1,4 @@
 login
-ATM
-deleteacct accNum accName
+atm
+deposit accNum amount
+logout
