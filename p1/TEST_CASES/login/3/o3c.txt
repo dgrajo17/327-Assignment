@@ -1,5 +1,5 @@
-login sucessful
-ATM Session ON
-Error: unidentified command
-Error: unidentified command
-logged out
+Status: login
+Status: atm
+Invalid input: lgout
+Invalid input: depost accNum 1000
+Please Login to Begin Transactions
