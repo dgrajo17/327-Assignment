@@ -1,6 +1,6 @@
-login sucessful
-ATM Session ON
-transaction complete (deposit)
-transaction complete (withdraw)
-transaction complete (transfer)
-logged out
+Status: login
+Status: atm
+Transaction Complete (Deposit)
+Transaction Complete (Withdraw)
+Transaction Complete (Transfer)
+Please Login to Begin Transactions
