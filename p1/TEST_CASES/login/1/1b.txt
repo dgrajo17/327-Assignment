@@ -1,6 +1,6 @@
 logout
-createacct
-deleteacct
+createAccount
+deleteAccount
 deposit
 withdraw
 transfer
