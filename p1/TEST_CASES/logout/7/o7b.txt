@@ -1,11 +1,11 @@
-login successful
-logged out
-Error: Must Login first
-Error: Must Login first
-Error: Must Login first
-Error: Must Login first
-Error: Must Login first
-Error: Must Login first
-Error: Must Login first
-Error: Must Login first
-Error: Must Login first
+Status: logout
+Please Login to Begin Transactions
+Invalid input: atm
+Invalid input: agent
+Invalid input: createAccount accNum accName
+Invalid input: deleteAccount accNum accName
+Invalid input: deposit accNum amount
+Invalid input: withdraw accNum amount
+Invalid input: transfer accNum otherAccNum amount
+Invalid input: asdasdasf
+Invalid input: 123452
