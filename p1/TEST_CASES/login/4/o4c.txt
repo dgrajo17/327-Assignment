@@ -1,4 +1,4 @@
-login sucessful
-Agent Session ON
-Error: unidentified command
-logged out
+Status: login
+Status: agent
+Invalid input: wthdraw accountName amount
+Please Login to Begin Transactions
