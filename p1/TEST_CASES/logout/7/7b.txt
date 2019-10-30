@@ -2,8 +2,8 @@ login
 logout
 atm
 agent
-createacct accNum accName
-deleteacct accNum accName
+createAccount accNum accName
+deleteAccount accNum accName
 deposit accNum amount
 withdraw accNum amount
 transfer accNum otherAccNum amount
