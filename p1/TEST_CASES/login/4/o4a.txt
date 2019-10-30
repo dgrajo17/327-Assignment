@@ -1,8 +1,11 @@
-login sucessful
-Agent Session ON
-transaction complete (create account)
-transaction complete (deposit)
-transaction complete (withdraw)
-transaction complete (transfer)
-transaction complete (delete account)
-logged out
+Status: login
+Status: agent
+Transaction Complete (Create Account)
+Please Login to Begin Transactions
+Status: login
+Status: agent
+Transaction Complete (Deposit)
+Transaction Complete (Withdraw)
+Transaction Complete (Transfer)
+Transaction Complete (Delete Account)
+Please Login to Begin Transactions
