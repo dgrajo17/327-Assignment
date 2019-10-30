@@ -4,4 +4,4 @@ Invalid input: createacct accNum accName
 Invalid input: deleteacct accNum accName
 Invalid input: ATM
 Invalid input: Agent
-EOS 0000000 000 0000000 ***
+Please Login to Begin Transactions
