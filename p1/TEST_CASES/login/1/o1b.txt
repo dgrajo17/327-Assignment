@@ -1,6 +1,6 @@
 Invalid input: logout
-Invalid input: createacct
-Invalid input: deleteacct
+Invalid input: createAccount
+Invalid input: deleteAccount
 Invalid input: deposit
 Invalid input: withdraw
 Invalid input: transfer
