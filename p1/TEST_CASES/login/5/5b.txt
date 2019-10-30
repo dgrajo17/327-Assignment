@@ -7,11 +7,11 @@ agnt
 logout
 
 login
-createacct accNum accName
+createAccount accNum accName
 logout
 
 login
-deleteacct accNum accName
+deleteAccount accNum accName
 logout
 
 login
