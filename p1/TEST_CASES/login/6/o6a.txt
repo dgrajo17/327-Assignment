@@ -1,3 +1,4 @@
-login successful
-ATM Session ON
-Transaction Complete - Account Deleted
+Status: login
+Status: atm
+Transaction Complete (Deposit)
+Please Login to Begin Transactions
