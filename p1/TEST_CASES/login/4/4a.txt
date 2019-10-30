@@ -1,8 +1,11 @@
 login
 agent
-createacct accNum accName
+createAccount accNum accName
+logout
+login
+agent
 deposit accNum amount
 withdraw accNum amount
 transfer accNum otherAccNum amount
-deleteacct accNum accName
+deleteAccount accNum accName
 logout
