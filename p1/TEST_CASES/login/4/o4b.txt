@@ -1,5 +1,5 @@
-login sucessful
-Agent Session ON
-Error: transaction not accepted under current session (Agent) 
-Error: transaction not accepted under current session (Agent)
-logged out
+Status: login
+Status: agent
+Invalid input: atm
+Invalid input: agent
+Please Login to Begin Transactions
