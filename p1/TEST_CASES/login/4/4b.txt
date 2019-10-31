@@ -3,3 +3,4 @@ agent
 atm
 agent
 logout
+exit

@@ -1,4 +1,4 @@
-login successful
-Agent session ON
-transaction complete (delete account)
-logged out
+Status: login
+Status: agent
+Transaction Complete (Delete Account)
+Please Login to Begin Transactions

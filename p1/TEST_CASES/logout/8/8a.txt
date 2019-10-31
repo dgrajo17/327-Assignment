@@ -1,5 +1,5 @@
 login
-ATM
-createacct accNum accName
-deposit accNum 1000
+atm
+createAccount accNum accName
 logout
+exit

@@ -1,4 +1,4 @@
-login successful
-Agent session ON
-Error: cannot create account - (exAccNum) already exists 
-logged out
+Status: login
+Status: agent
+Account number exists
+Please Login to Begin Transactions

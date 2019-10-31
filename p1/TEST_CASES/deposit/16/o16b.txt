@@ -1,4 +1,4 @@
-login successful
-ATM Session ON
-Error: Could not deposit amount. Account does not exist. 
-logged out
+Status: login
+Status: atm
+Account number does not exist 
+Please Login to Begin Transactions

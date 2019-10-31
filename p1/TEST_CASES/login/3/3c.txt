@@ -1,5 +1,6 @@
 login
 atm
 lgout
-depost accNum 1000
+depost 1234567 1000
 logout
+exit

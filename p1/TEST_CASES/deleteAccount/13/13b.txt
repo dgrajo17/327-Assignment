@@ -1,4 +1,5 @@
 login
 atm
-deleteacct 1234567 testName
+deleteAccount 1234567 testName
 logout
+exit

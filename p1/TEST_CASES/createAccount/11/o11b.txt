@@ -1,4 +1,4 @@
-login successful
-ATM session ON
-Error: transaction not accepted under current session (ATM) 
-logged out
+Status: login
+Status: atm
+Invalid input: createAccount 1234569 testName
+Please Login to Begin Transactions

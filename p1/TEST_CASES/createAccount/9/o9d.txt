@@ -1,4 +1,4 @@
-login successful
-Agent session ON
-Error: account number can only contain numeral digits
-logged out
+Status: login
+Status: agent
+Account number must be decimals only
+Please Login to Begin Transactions

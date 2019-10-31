@@ -1,4 +1,4 @@
-DEP accNum amount 0000000 ***
-WDR accNum amount 0000000 ***
-XFR accNum amount otherAccNum ***
+DEP 1234567 1000 0000000 ***
+WDR 1234567 1000 0000000 ***
+XFR 1234567 1000 1234568 ***
 EOS 0000000 000 0000000 ***

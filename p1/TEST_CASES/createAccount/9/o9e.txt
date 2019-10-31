@@ -1,4 +1,4 @@
-login successful
-Agent session ON
-Error: account number cannot contain empty spaces
-logged out
+Status: login
+Status: agent
+Account number must be 7 decimals long
+Please Login to Begin Transactions

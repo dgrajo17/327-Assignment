@@ -1,6 +1,5 @@
-login successful
-Agent session ON
-Error: cannot delete account - account number or name does not exist
-Error: cannot delete account - account number or name does not exist
-Error: cannot delete account - account number or name does not exist
-logged out
+Status: login
+Status: agent
+Account number does not exist
+Account number does not exist
+Please Login to Begin Transactions

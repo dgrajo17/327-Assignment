@@ -1,4 +1,4 @@
-login successful
-Agent session ON
-Error: account number must be total of 7 digits
-logged out
+Status: login
+Status: agent
+Account number must be 7 decimals long
+Please Login to Begin Transactions

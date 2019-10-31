@@ -1,4 +1,4 @@
 Status: login
 Status: agent
-Invalid input: wthdraw accountName amount
+Invalid input: wthdraw 1234567 amount
 Please Login to Begin Transactions

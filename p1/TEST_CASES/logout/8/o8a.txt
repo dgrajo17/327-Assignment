@@ -1,4 +1,4 @@
 Status: login
 Status: atm
-Invalid input: deleteAccount 1234569 testName
+Transaction Complete (Create Account)
 Please Login to Begin Transactions

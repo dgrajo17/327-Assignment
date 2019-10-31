@@ -1,4 +1,5 @@
 login
 atm
-deposit accNum amount
+deposit 1234567 1000
 logout
+exit
