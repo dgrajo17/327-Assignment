@@ -1,4 +1,4 @@
-login successful.
-ATM session ON
-Deposit successful
-logged out
+Status: login
+Status: atm
+Transaction Complete (Deposit)
+Please Login to Begin Transactions
