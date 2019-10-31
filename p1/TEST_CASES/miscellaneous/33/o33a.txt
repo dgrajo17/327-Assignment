@@ -1,10 +1,9 @@
-login successful.
-ATM session ON
-Deposit successful
-logged out
-# Some sort of execution time information
-login successful.
-ATM session ON
-Deposit successful
-logged out
-# Some sort of execution time information
+Status: login
+Status: atm
+Transaction Complete (Deposit)
+Please Login to Begin Transactions
+
+Status: login
+Status: atm
+Transaction Complete (Deposit)
+Please Login to Begin Transactions
