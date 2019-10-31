@@ -1,9 +1,9 @@
 login
 atm
-withdraw accNum 100000
-withdraw accNum 100000
-withdraw accNum 100000
-withdraw accNum 100000
-withdraw accNum 100000
-withdraw accNum 100000
+withdraw 1234567 100000
+withdraw 1234567 100000
+withdraw 1234567 100000
+withdraw 1234567 100000
+withdraw 1234567 100000
+withdraw 1234567 100000
 logout

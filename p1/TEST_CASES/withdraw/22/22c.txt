@@ -1,5 +1,5 @@
 login
 agent
-deposit accNum 9999999999999999999999999
-deposit accNum -1000
+deposit 1234567 9999999999999999999999999
+deposit 1234567 -1000
 logout

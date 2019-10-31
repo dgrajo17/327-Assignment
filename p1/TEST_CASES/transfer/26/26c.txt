@@ -1,4 +1,4 @@
 login
 agent
-transfer accNum otherAccNum 99999999
+transfer 1234567 1234568 99999999
 logout

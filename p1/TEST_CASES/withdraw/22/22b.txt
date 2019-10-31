@@ -1,6 +1,6 @@
 login
 agent
-withdraw accNum 100a
-withdraw accNum 10&2
-withdraw accNum 10 29
+withdraw 1234567 100a
+withdraw 1234567 10&2
+withdraw 1234567 10 29
 logout

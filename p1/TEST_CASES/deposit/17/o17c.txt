@@ -1,4 +1,5 @@
-ATM Session ON
-Error: please enter number between 0-200000
-Error: please enter number between 0-200000
-logged out
+Status: login
+Status: atm
+Invalid input: Amount should be between 3 and 8 decimal digits
+Invalid input: Amount should be between 3 and 8 decimal digits
+Please Login to Begin Transactions

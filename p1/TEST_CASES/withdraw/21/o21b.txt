@@ -1,6 +1,6 @@
-login successful
-ATM Session ON
-Error: please enter number between 0-100000
-Error: please enter number between 0-100000
-Error: please enter number between 0-100000
-logged out
+Status: login
+Status: atm
+Invalid input: Amount should be decimals only
+Invalid input: Amount should be decimals only
+Invalid input: Amount should be decimals only
+Please Login to Begin Transactions

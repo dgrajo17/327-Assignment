@@ -1,4 +1,4 @@
-login successful
-ATM Session ON
-Withdrew successfully 
-logged out
+Status: login
+Status: atm
+Transaction Complete (Withdraw)
+Please Login to Begin Transactions

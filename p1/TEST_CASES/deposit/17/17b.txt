@@ -1,6 +1,6 @@
 login
 atm
-deposit accNum 100a
-deposit accNum 10&2
-deposit accNum 10 29
+deposit 1234567 100a
+deposit 1234567 10&2
+deposit 1234567 10 29
 logout

@@ -1,4 +1,4 @@
 login
 agent
-deposit accNum 1000
+deposit 1234567 1000
 logout
