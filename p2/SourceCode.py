@@ -4,6 +4,7 @@
 
 import re
 import sys
+import os
 
 
 # Contains useful functions of processing the validity and presence of account numbers and names and holds and updates account information
@@ -131,7 +132,7 @@ class Actions:
         print("Status: " + self.status)
         # Read the valid accounts file -> replace demofile.txt with valid accounts file
         global vaf
-        vaf = open(str(self.vafFileName), "r")
+        vaf = open(self.vafFileName, "r")
         self.toWrite.clear()  # Clear statements to write to tsf
         # Clear and initialize new hashtable/dictionairy
         # This ensures that only accounts present at login will allow transactions even if new ones are added
@@ -396,7 +397,8 @@ class Actions:
 
 
     def exit(self, action):
-        sys.exit()
+        #sys.exit()
+        self.status = "exit"
 
     # Handle action after it is inputted and processed through keyboard input, make sure action is valid given restrictions
     def actionHandler(self, action):
@@ -404,7 +406,7 @@ class Actions:
             print("Action Handler")
             return 1
         if action == "exit":
-            exit()
+            self.exit(action)
         if self.status == "logout":
             if action == "login":  # can only login after logout
                 self.login()
@@ -501,11 +503,18 @@ class Backend:
 # vaf file should be first, tsf second, no quotations needed. Should be present in the working directory 
 # Shell scripts can be run on top of this program to feed  a sequence of commands into the program and to trigger running the script
 
-if __name__ == "__main__":
+
+def main():
     status = "logout"
     print("Welcome")
     print("Please Login to Begin Transactions")
     mainClass = Actions()  # Create object to be able to begin processing front end actions
     while 1:
         mainClass.handleKeyboardInput()
+        if (mainClass.status == "exit"):
+            break
+
+
+if __name__ == "__main__":
+    main()
 
