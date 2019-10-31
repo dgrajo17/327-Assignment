@@ -1,5 +1,5 @@
-login successful
-Agent session ON
-Error: account number cannot begin or end with an empty spaces
-Error: account number cannot begin or end with an empty spaces
-logged out
+Status: login
+Status: agent
+Account name cannot start or end with a space/blank character
+Account name cannot start or end with a space/blank character
+Please Login to Begin Transactions

@@ -1,4 +1,4 @@
-login successful
-Agent session ON
-Error: cannot create account number starting with 0
-logged out
+Status: login
+Status: agent
+Account number must not begin with a 0
+Please Login to Begin Transactions

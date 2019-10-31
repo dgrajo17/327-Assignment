@@ -1,5 +1,5 @@
-login successful
-Agent session ON
-transaction complete (delete account)
-transaction complete (create account)
+Status: login
+Status: agent
+Transaction Complete (Delete Account)
+Transaction Complete (Create Account)
 logged out

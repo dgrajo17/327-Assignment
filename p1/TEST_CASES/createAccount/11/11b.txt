@@ -1,4 +1,5 @@
 login
 atm
-createacct 1234567 testName
+createAccount 1234569 testName
 logout
+exit

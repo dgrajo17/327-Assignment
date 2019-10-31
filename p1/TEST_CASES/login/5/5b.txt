@@ -7,21 +7,22 @@ agnt
 logout
 
 login
-createAccount accNum accName
+createAccount 1234567 accName
 logout
 
 login
-deleteAccount accNum accName
+deleteAccount 1234567 accName
 logout
 
 login
-deposit accNum amount
+deposit 1234567 1000
 logout
 
 login
-withdraw accNum amount
+withdraw 1234567 1000
 logout
 
 login
-transfer accNum otherAccNum amount
+transfer 1234567 1234568 1000
 logout
+exit

@@ -185,7 +185,7 @@ class Actions:
                 if self.account.accNumExists(accNum,
                                              self.accountsList) == 0:  # see if proposed account name meets all restrictions
                     if self.account.accNameValid(accName, self.error) == 1:
-                        print("12")
+                        #print("12")
                         # write new account to VAF
                         vaf1 = open(str(self.vafFileName), "r")  # "a" will append, "w" will overwrite
                         lines = vaf1.readlines()
@@ -202,7 +202,8 @@ class Actions:
                         vaf1.close()
                         # Save to tsf file
                         self.toWrite.append("NEW " + accNum + " " + "000" + " " + "0000000" + " " + accName + "\n")
-                        print("Account " + accNum + " created successfully.")
+                        print("Transaction Complete (Create Account)")
+                        #print("Account " + accNum + " created successfully.")
                         return 1
                     else:
                         return 0
@@ -240,7 +241,8 @@ class Actions:
                         self.toWrite.append("DEL " + accNum + " " + "000" + " " + "0000000" + " " + accName + "\n")
                         del self.accountsList[
                             accNum]  # Delete account from valid accounts list so that you can't do transactions on it
-                        print("Account " + accNum + " deleted successfully.")
+                        #print("Account " + accNum + " deleted successfully.")
+                        print("Transaction Complete (Delete Account)")
                         return 1
                     else:
                         return 0
@@ -255,7 +257,6 @@ class Actions:
 
     # deposit to an existing account
     def deposit(self, action):
-        print("Deposit")
         if self.status == "atm":
             limit = 200000  # from assignment requirements
         elif self.status == "agent":
@@ -277,6 +278,7 @@ class Actions:
                                 self.toWrite.append(
                                     "DEP " + accNum + " " + amount + " " + "0000000" + " " + "***" + "\n")
                                 self.account.updateDailyAmount(accNum, int(amount), 1, self.backendDict)
+                                print("Transaction Complete (Deposit)")
                             else:
                                 self.error.errorMsg("Amount exceeds the deposit limit")
                                 return 0
@@ -296,7 +298,6 @@ class Actions:
             return 0
 
     def withdraw(self, action):
-        print("Withdraw")
         if self.status == "atm":
             limit = 200000  # from assignment requirements
         elif self.status == "agent":
@@ -319,6 +320,7 @@ class Actions:
                                 self.toWrite.append(
                                     "WDR " + "0000000" + " " + amount + " " + accNum + " " + "***" + "\n")
                                 self.account.updateDailyAmount(accNum, int(amount), 2, self.backendDict)
+                                print("Transaction Complete (Withdraw)")
                             else:
                                 self.error.errorMsg("Amount exceeds the withdrawal limit.")
                                 return 0
@@ -338,7 +340,6 @@ class Actions:
             return 0
 
     def transfer(self, action):
-        print("Transfer")
         if self.status == "atm":
             limit = 200000  # from assignment requirements
         elif self.status == "agent":
@@ -367,6 +368,7 @@ class Actions:
                                             self.toWrite.append(
                                                 "XFR " + accNumIn + " " + amount + " " + accNumOut + " " + "***" + "\n")
                                             self.account.updateDailyAmount(accNumOut, int(amount), 3, self.backendDict)
+                                            print("Transaction Complete (Transfer)")
 
                                         else:
                                             self.error.errorMsg("Amount exceeds the withdrawal limit.")

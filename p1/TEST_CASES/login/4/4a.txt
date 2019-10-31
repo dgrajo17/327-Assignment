@@ -1,11 +1,12 @@
 login
 agent
-createAccount accNum accName
+createAccount 1234569 accName
 logout
 login
 agent
-deposit accNum amount
-withdraw accNum amount
-transfer accNum otherAccNum amount
-deleteAccount accNum accName
+deposit 1234567 1000
+withdraw 1234567 1000
+transfer 1234567 1234568 1000
+deleteAccount 1234567 accName
 logout
+exit

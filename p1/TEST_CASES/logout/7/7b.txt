@@ -2,10 +2,11 @@ login
 logout
 atm
 agent
-createAccount accNum accName
-deleteAccount accNum accName
-deposit accNum amount
-withdraw accNum amount
-transfer accNum otherAccNum amount
+createAccount 1234567 accName
+deleteAccount 1234567 accName
+deposit 1234567 1000
+withdraw 1234567 1000
+transfer 1234567 1234568 1000
 asdasdasf
 123452
+exit

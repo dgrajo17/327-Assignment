@@ -1,7 +1,7 @@
-login successful
-Agent session ON
-transaction complete (delete account)
-Error: account does not exist
-Error: account does not exist
-Error: account does not exist
-logged out
+Status: login
+Status: agent
+Transaction Complete (Delete Account)
+Account number does not exist
+Account number does not exist
+Account number does not exist
+Please Login to Begin Transactions

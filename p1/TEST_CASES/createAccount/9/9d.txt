@@ -1,4 +1,5 @@
 login
 agent
-createacct 12AB567 testName
+createAccount 12AB567 testName
 logout
+exit

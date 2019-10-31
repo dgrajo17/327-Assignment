@@ -7,21 +7,21 @@ Invalid input: agnt
 Please Login to Begin Transactions
 
 login
-Invalid input: createAccount accNum accName
+Invalid input: createAccount 1234567 accName
 Please Login to Begin Transactions
 
 login
-Invalid input: deleteAccount accNum accName
+Invalid input: deleteAccount 1234567 accName
 Please Login to Begin Transactions
 
 login
-Invalid input: deposit accNum amount
+Invalid input: deposit 1234567 1000
 Please Login to Begin Transactions
 
 login
-Invalid input: withdraw accNum amount
+Invalid input: withdraw 1234567 1000
 Please Login to Begin Transactions
 
 login
-Invalid input: transfer accNum otherAccNum amount
+Invalid input: transfer 1234567 1234568 1000
 Please Login to Begin Transactions

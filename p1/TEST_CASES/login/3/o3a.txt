@@ -1,7 +1,7 @@
 Status: login
 Status: atm
-Invalid input: createAccount accNum accName
-Invalid input: deleteAccount accNum accName
+Invalid input: createAccount 1234567 accName
+Invalid input: deleteAccount 1234567 accName
 Invalid input: atm
 Invalid input: agent
 Please Login to Begin Transactions

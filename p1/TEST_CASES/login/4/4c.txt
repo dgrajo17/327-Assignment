@@ -1,4 +1,5 @@
 login
 agent
-wthdraw accountName amount
+wthdraw 1234567 amount
 logout
+exit

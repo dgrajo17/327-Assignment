@@ -1,4 +1,5 @@
 login
 atm
-deposit 4040404 1000
+deposit 1234569 1000
 logout
+exit

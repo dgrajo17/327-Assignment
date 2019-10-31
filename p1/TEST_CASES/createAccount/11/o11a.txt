@@ -1,4 +1,4 @@
-login successful
-Agent session ON
-transaction complete (create account)
-logged out
+Status: login
+Status: agent
+Transaction Complete (Create Account)
+Please Login to Begin Transactions

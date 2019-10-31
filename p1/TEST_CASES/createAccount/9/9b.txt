@@ -1,4 +1,5 @@
 login
 agent
-createacct 0123456 testName
+createAccount 0123456 testName
 logout
+exit

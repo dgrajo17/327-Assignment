@@ -1,4 +1,4 @@
-login successful
-Agent session ON
-Error: account name needs to be 3 to 30 characters long
-logged out
+Status: login
+Status: agent
+Account name should be 3-30 alphanumeric characters long
+Please Login to Begin Transactions

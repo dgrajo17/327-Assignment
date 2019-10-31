@@ -1,5 +1,6 @@
 login
 agent
-createacct 1234567 testName
-deposit 123456 10000
+createAccount 1234569 testName
+deposit 1234569 10000
 logout
+exit
