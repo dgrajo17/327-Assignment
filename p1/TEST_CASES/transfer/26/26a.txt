@@ -2,3 +2,4 @@ login
 atm
 transfer 1234567 1234568 1000000
 logout
+exit

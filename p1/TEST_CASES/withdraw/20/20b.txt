@@ -2,3 +2,4 @@ login
 atm
 withdraw 4040404 1000
 logout
+exit

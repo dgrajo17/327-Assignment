@@ -4,3 +4,4 @@ withdraw 1234567 100a
 withdraw 1234567 10&2
 withdraw 1234567 10 29
 logout
+exit

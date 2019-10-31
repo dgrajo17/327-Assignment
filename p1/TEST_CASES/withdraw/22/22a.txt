@@ -2,3 +2,4 @@ login
 agent
 withdraw 1234567 1000
 logout
+exit
