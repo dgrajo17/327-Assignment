@@ -68,6 +68,42 @@ def test_r3b(capsys):
         test_id='3b'
     )
 
+
+def test_r3c(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='3c'
+    )
+
+
+def test_r4a(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='4a'
+    )
+
+
+def test_r4b(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='4b'
+    )
+
 def helper(
         capsys,
         test_id):
@@ -134,6 +170,7 @@ def helper(
     for i in range(1, len(terminal_output_tail)+1):
         index = i * -1
         print(index)
+        print("What we expect")
         print(terminal_output_tail[index])
         print(out_lines[index])
         assert terminal_output_tail[index] == out_lines[index]
