@@ -1,4 +1,4 @@
-login successful
-Agent Session ON
-Deposited successfully  
-logged out
+Status: login
+Status: agent
+Transaction Complete (Deposit)
+Please Login to Begin Transactions

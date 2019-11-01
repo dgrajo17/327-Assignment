@@ -7,3 +7,5 @@ login
 atm
 deposit 1234568 1000
 logout
+
+exit

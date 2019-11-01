@@ -1,4 +1,5 @@
 login
 atm
-withdraw accNum 500
+withdraw 1234567 500
 logout
+exit

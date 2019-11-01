@@ -1,17 +1,17 @@
-login successful
-ATM Session ON
-Withdrew successfully
-Withdrew successfully 
-Withdrew successfully 
-Withdrew successfully 
-Withdrew successfully   
-logged out
-login successful
-ATM Session ON
-Withdrew successfully
-Withdrew successfully 
-Withdrew successfully 
-Withdrew successfully
-Withdrew successfully 
-Withdrew successfully   
-logged out
+Status: login
+Status: atm
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Please Login to Begin Transactions
+Status: login
+Status: atm
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Please Login to Begin Transactions

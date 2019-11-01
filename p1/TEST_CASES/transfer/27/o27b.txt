@@ -1,5 +1,5 @@
-login successful
-ATM Session ON
-Transferred successfully
-Error: Could not transfer amount as it would exceed daily limit of 1000000 
-logged out
+Status: login
+Status: atm
+Transaction Complete (Transfer)
+Invalid input: Amount exceeds the withdrawal limit.
+Please Login to Begin Transactions

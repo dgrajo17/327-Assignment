@@ -1,4 +1,5 @@
 login
 atm
-transfer accNum otherAccNum 9999999999
+transfer 1234567 1234568 9999999999
 logout
+exit

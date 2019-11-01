@@ -1,4 +1,4 @@
-login successful
-Agent Session ON
-Transferred successfully
-logged out
+Status: login
+Status: agent
+Transaction Complete (Transfer)
+Please Login to Begin Transactions

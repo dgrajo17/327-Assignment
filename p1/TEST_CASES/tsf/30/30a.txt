@@ -2,6 +2,7 @@ for i in 1 2 3
 do
     login
     atm
-    deposit accNum 1000
+    deposit 1234567 1000
     logout
 done
+exit

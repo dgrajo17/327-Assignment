@@ -1,4 +1,5 @@
 login
 atm
-withdraw newAccNum 1000
+withdraw 4040404 1000
 logout
+exit

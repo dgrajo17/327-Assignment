@@ -1,13 +1,13 @@
-login successful
-ATM Session ON
-Deposited successfully  
-Deposited successfully
-Deposited successfully
-logged out
-login successful
-ATM Session ON
-Deposited successfully
-Deposited successfully
-Deposited successfully
-Deposited successfully  
-logged out
+Status: login
+Status: atm
+Transaction Complete (Deposit)
+Transaction Complete (Deposit)
+Transaction Complete (Deposit)
+Please Login to Begin Transactions
+Status: login
+Status: atm
+Transaction Complete (Deposit)
+Transaction Complete (Deposit)
+Transaction Complete (Deposit)
+Transaction Complete (Deposit)  
+Please Login to Begin Transactions

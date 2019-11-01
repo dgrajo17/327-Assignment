@@ -1,6 +1,7 @@
 login
 atm
-transfer accNum otherAccNum -1000
-transfer accNum otherAccNum 10 00
-transfer accNum otherAccNum 10a00
+transfer 1234567 1234568 -1000
+transfer 1234567 1234568 00
+transfer 1234567 1234568 10a00
 logout
+exit

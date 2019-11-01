@@ -1,4 +1,4 @@
-login successful
-Agent Session ON
-Error: Transfer amount is not valid. Must be between 0 and 99999999 
-logged out
+Status: login
+Status: agent
+Invalid input: Amount exceeds the withdrawal limit.
+Please Login to Begin Transactions
