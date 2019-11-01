@@ -1,0 +1,6 @@
+login
+agent
+createAccount 1234569  testName
+createAccount 1234560 testName 
+logout
+exit

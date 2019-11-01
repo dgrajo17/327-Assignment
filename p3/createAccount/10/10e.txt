@@ -1,6 +1,0 @@
-login
-agent
-createAccount 1234567  testName
-createAccount 1234568 testName 
-logout
-exit
