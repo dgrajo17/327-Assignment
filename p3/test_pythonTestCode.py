@@ -10,7 +10,7 @@ from p3 import SourceCode
 path = os.path.dirname(os.path.abspath(__file__))
 
 
-def test_r10a(capsys):
+def test_r1a(capsys):
     """Testing r2. All required information stored in folder r2. 
 
     Arguments:
@@ -19,6 +19,17 @@ def test_r10a(capsys):
     helperNoTSF(
         capsys=capsys,
         test_id='1a'
+    )
+
+def test_r1b(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='1b'
     )
 
 
