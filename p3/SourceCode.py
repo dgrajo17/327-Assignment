@@ -319,7 +319,7 @@ class Actions:
                             if int(amount) <= min(limit, currentAmount,
                                                   (500000 - dailyAmount)):  # check all restrictions
                                 self.toWrite.append(
-                                    "WDR " + "0000000" + " " + amount + " " + accNum + " " + "***" + "\n")
+                                    "WDR " + accNum + " " + amount + " " + "0000000" + " " + "***" + "\n")
                                 self.account.updateDailyAmount(accNum, int(amount), 2, self.backendDict)
                                 print("Transaction Complete (Withdraw)")
                             else:
