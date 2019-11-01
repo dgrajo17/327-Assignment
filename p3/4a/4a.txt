@@ -1,0 +1,12 @@
+login
+agent
+createAccount 1234569 accName
+logout
+login
+agent
+deposit 1234567 1000
+withdraw 1234567 1000
+transfer 1234567 1234568 1000
+deleteAccount 1234567 accName
+logout
+exit

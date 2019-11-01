@@ -1,0 +1,8 @@
+login
+atm
+createAccount 1234567 accName
+deleteAccount 1234567 accName
+atm
+agent
+logout
+exit

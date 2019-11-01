@@ -1,0 +1,5 @@
+Status: login
+Status: atm
+Invalid input: lgout
+Invalid input: depost 1234567 1000
+Please Login to Begin Transactions

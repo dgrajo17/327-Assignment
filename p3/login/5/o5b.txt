@@ -1,0 +1,27 @@
+Status: login
+Invalid input: amt
+Please Login to Begin Transactions
+
+login
+Invalid input: agnt
+Please Login to Begin Transactions
+
+login
+Invalid input: createAccount 1234567 accName
+Please Login to Begin Transactions
+
+login
+Invalid input: deleteAccount 1234567 accName
+Please Login to Begin Transactions
+
+login
+Invalid input: deposit 1234567 1000
+Please Login to Begin Transactions
+
+login
+Invalid input: withdraw 1234567 1000
+Please Login to Begin Transactions
+
+login
+Invalid input: transfer 1234567 1234568 1000
+Please Login to Begin Transactions

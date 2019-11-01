@@ -1,0 +1,6 @@
+login
+agent
+atm
+agent
+logout
+exit

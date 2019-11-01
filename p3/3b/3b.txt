@@ -1,0 +1,7 @@
+login
+atm
+deposit 1234567 1000
+withdraw 1234567 1000
+transfer 1234567 1234568 1000
+logout
+exit

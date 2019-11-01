@@ -1,0 +1,5 @@
+login
+agent
+wthdraw 1234567 amount
+logout
+exit

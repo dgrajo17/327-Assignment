@@ -33,6 +33,29 @@ def test_r1b(capsys):
     )
 
 
+def test_r2a(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='2a'
+    )
+
+
+def test_r3a(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='3a'
+    )
+
 def helper(
         capsys,
         test_id):
@@ -48,16 +71,25 @@ def helper(
     # locate test case folder:
     case_folder = os.path.join(path, test_id)
 
+    # concatenate test_id with .txt
+    test_id_txt = test_id + ".txt"
+
+    # concatenate test_id_txt with o
+    out_test_id_txt = "o" + test_id_txt
+
+    # concatenate test_id with o, _TSF and .txt
+    out_tsf_test_id_txt = "o" + test_id + "_TSF.txt"
+
     # read terminal input:
     with open(
         os.path.join(
-            case_folder, '10a.txt')) as rf:  # REPLACE NAME HERE
+            case_folder, test_id_txt)) as rf:  # REPLACE NAME HERE
         terminal_input = rf.read().splitlines()
 
     # read expected tail portion of the terminal output:
     with open(
         os.path.join(
-            case_folder, 'o10a.txt')) as rf:  #REPLACE NAME HERE
+            case_folder, out_test_id_txt)) as rf:  #REPLACE NAME HERE
         terminal_output_tail = rf.read().splitlines()
 
     # create a temporary file in the system to store output transactions
@@ -66,7 +98,7 @@ def helper(
 
     # prepare program parameters
     sys.argv = ['SourceCode.py',
-        os.path.join(case_folder, 'vaf1.txt'),
+        os.path.join(case_folder, 'vaf.txt'),
         transaction_summary_file]
 
     # set terminal input
@@ -94,7 +126,7 @@ def helper(
     # compare transactions:
     with open(transaction_summary_file, 'r') as of:
         content = of.read()
-        with open(os.path.join(case_folder, 'o10a_TSF.txt'), 'r') as exp_file_of:
+        with open(os.path.join(case_folder, out_tsf_test_id_txt), 'r') as exp_file_of:
             expected_content = exp_file_of.read()
             assert content == expected_content
 

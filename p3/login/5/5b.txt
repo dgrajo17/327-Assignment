@@ -1,0 +1,28 @@
+login
+amt
+logout
+
+login
+agnt
+logout
+
+login
+createAccount 1234567 accName
+logout
+
+login
+deleteAccount 1234567 accName
+logout
+
+login
+deposit 1234567 1000
+logout
+
+login
+withdraw 1234567 1000
+logout
+
+login
+transfer 1234567 1234568 1000
+logout
+exit
