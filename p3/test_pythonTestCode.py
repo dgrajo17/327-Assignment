@@ -51,9 +51,21 @@ def test_r3a(capsys):
     Arguments:
         capsys -- object created by pytest to capture stdout and stderr
     """
-    helper(
+    helperNoTSF(
         capsys=capsys,
         test_id='3a'
+    )
+
+
+def test_r3b(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='3b'
     )
 
 def helper(
@@ -121,6 +133,9 @@ def helper(
     # compare terminal outputs at the end.`
     for i in range(1, len(terminal_output_tail)+1):
         index = i * -1
+        print(index)
+        print(terminal_output_tail[index])
+        print(out_lines[index])
         assert terminal_output_tail[index] == out_lines[index]
 
     # compare transactions:
@@ -128,6 +143,10 @@ def helper(
         content = of.read()
         with open(os.path.join(case_folder, out_tsf_test_id_txt), 'r') as exp_file_of:
             expected_content = exp_file_of.read()
+            print("Content")
+            print(content)
+            print("expected")
+            print(expected_content)
             assert content == expected_content
 
     # clean up
@@ -197,7 +216,7 @@ def helperNoTSF(
     # compare terminal outputs at the end.`
     for i in range(1, len(terminal_output_tail) + 1):
         index = i * -1
-        assert terminal_output_tail[index] == out_lines[index ]
+        assert terminal_output_tail[index] == out_lines[index]
 
     # clean up
     os.close(temp_fd)

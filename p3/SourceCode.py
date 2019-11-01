@@ -148,7 +148,7 @@ class Actions:
     def logout(self):
         # set status to logout and write to tsf
         self.status = "logout"
-        print("Status: " + self.status)
+        #print("Status: " + self.status)
         vaf.close()
         tsf = open(str(self.tsfFileName), "w+")  # Using "a" will append, "w" will overwrite
         for entry in self.toWrite:
@@ -157,11 +157,11 @@ class Actions:
             "EOS " + "0000000" + " " + "000" + " " + "0000000" + " " + "***\n")  # end the tsf with an EOS transaction code (append to end)
         # Print TSF
         tsf.seek(0)
-        for line in tsf:
-            print(line)
+        #for line in tsf:
+        #    print(line)
         # Close TSF
         tsf.close()
-        print("\nWelcome")
+        #print("\nWelcome")
         print("Please Login to Begin Transactions")  # Added to ensure user knows that they should login
 
     # set status to ATM when specified
