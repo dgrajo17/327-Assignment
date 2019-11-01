@@ -1,5 +1,0 @@
-login
-agent
-createAccount exAccNum testName
-logout
-exit

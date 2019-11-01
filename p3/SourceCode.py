@@ -28,7 +28,7 @@ class Accounts:
                     error.errorMsg("Account number must be decimals only")
                     return 0
             else:
-                error.errorMsg("Accout number must not begin with a 0")
+                error.errorMsg("Account number must not begin with a 0")
                 return 0
         else:
             error.errorMsg("Account number must be 7 decimals long")

@@ -177,15 +177,85 @@ def test_r7b(capsys):
     )
 
 
+
 def test_r8a(capsys):
     """Testing r2. All required information stored in folder r2.
 
     Arguments:
         capsys -- object created by pytest to capture stdout and stderr
     """
-    helperNoTSF(
+    helper(
         capsys=capsys,
         test_id='8a'
+    )
+
+
+def test_r9a(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='9a'
+    )
+
+
+def test_r9b(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='9b'
+    )
+
+
+def test_r9c(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='9c'
+    )
+
+def test_r9d(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='9d'
+    )
+
+def test_r9e(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='9e'
+    )
+
+def test_r9f(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='9f'
     )
 
 def helper(
