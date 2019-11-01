@@ -1,0 +1,5 @@
+Status: login
+Status: agent
+Account name cannot start or end with a space/blank character
+Account name cannot start or end with a space/blank character
+Please Login to Begin Transactions

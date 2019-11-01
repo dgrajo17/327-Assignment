@@ -1,0 +1,5 @@
+login
+agent
+createAccount 12AB567 testName
+logout
+exit

@@ -1,0 +1,5 @@
+login
+agent
+createAccount 1234569 abcdefghijlkmnopqrstuvwxyzabcde
+logout
+exit

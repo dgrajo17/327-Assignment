@@ -1,0 +1,5 @@
+login
+atm
+createAccount 1234569 testName
+logout
+exit

@@ -104,6 +104,90 @@ def test_r4b(capsys):
         test_id='4b'
     )
 
+
+def test_r4c(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='4c'
+    )
+
+
+def test_r5a(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='5a'
+    )
+
+
+def test_r5b(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='5b'
+    )
+
+
+def test_r6a(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='6a'
+    )
+
+
+def test_r7a(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='7a'
+    )
+
+
+def test_r7b(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='7b'
+    )
+
+
+def test_r8a(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='8a'
+    )
+
 def helper(
         capsys,
         test_id):
@@ -143,6 +227,7 @@ def helper(
     # create a temporary file in the system to store output transactions
     temp_fd, temp_file = tempfile.mkstemp()
     transaction_summary_file = temp_file
+
 
     # prepare program parameters
     sys.argv = ['SourceCode.py',
@@ -253,6 +338,10 @@ def helperNoTSF(
     # compare terminal outputs at the end.`
     for i in range(1, len(terminal_output_tail) + 1):
         index = i * -1
+        print(index)
+        print("What we expect")
+        print(terminal_output_tail[index])
+        print(out_lines[index])
         assert terminal_output_tail[index] == out_lines[index]
 
     # clean up

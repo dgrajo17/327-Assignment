@@ -1,0 +1,6 @@
+login
+agent
+createAccount 1234569 testName
+deposit 1234569 10000
+logout
+exit
