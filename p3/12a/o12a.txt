@@ -1,4 +1,6 @@
 Status: login
 Status: agent
+Transaction Complete (Delete Account)
 Transaction Complete (Create Account)
+Account number does not exist
 Please Login to Begin Transactions

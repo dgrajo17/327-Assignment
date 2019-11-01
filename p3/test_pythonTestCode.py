@@ -302,6 +302,28 @@ def test_r10e(capsys):
         test_id='10e'
     )
 
+def test_r11a(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='11a'
+    )
+
+def test_r11b(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helper(
+        capsys=capsys,
+        test_id='11b'
+    )
+
 def helper(
         capsys,
         test_id):
