@@ -693,16 +693,16 @@ path = os.path.dirname(os.path.abspath(__file__))
         # test_id='25b'
     # )
 	
-# def test_r26a(capsys):
-    # """Testing r2. All required information stored in folder r2.
+def test_r26a(capsys):
+    """Testing r2. All required information stored in folder r2.
 
-    # Arguments:
-        # capsys -- object created by pytest to capture stdout and stderr
-    # """
-    # helperNoTSF(
-        # capsys=capsys,
-        # test_id='26a'
-    # )
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='26a'
+    )
 
 # def test_r26b(capsys):
     # """Testing r2. All required information stored in folder r2.
@@ -715,16 +715,16 @@ path = os.path.dirname(os.path.abspath(__file__))
         # test_id='26b'
     # )
 	
-# def test_r26c(capsys):
-    # """Testing r2. All required information stored in folder r2.
+def test_r26c(capsys):
+    """Testing r2. All required information stored in folder r2.
 
-    # Arguments:
-        # capsys -- object created by pytest to capture stdout and stderr
-    # """
-    # helperNoTSF(
-        # capsys=capsys,
-        # test_id='26c'
-    # )
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='26c'
+    )
 	
 # def test_r26d(capsys):
     # """Testing r2. All required information stored in folder r2.
@@ -736,8 +736,7 @@ path = os.path.dirname(os.path.abspath(__file__))
         # capsys=capsys,
         # test_id='26d'
     # )
-	
-	
+		
 # def test_r27a(capsys):
     # """Testing r2. All required information stored in folder r2.
 

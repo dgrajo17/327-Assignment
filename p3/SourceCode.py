@@ -357,7 +357,7 @@ class Actions:
                                         currentAmount, dailyAmount = self.account.getAccBalance(accNumOut, 3,
                                                                                                 self.backendDict)  # get account information
                                         if int(amount) <= min(limit, currentAmount, (
-                                                1000000 - dailyAmount)):  # check all restrictions to make sure account has money to withdraw
+                                                limit - dailyAmount)):  # check all restrictions to make sure account has money to withdraw
                                             self.toWrite.append(
                                                 "XFR " + accNumIn + " " + amount + " " + accNumOut + " " + "***" + "\n")
                                             self.account.updateDailyAmount(accNumOut, int(amount), 3, self.backendDict)
@@ -476,7 +476,7 @@ class Actions:
 # of the daily limit they have remaining for each transaction type
 class Backend:
     def __init__(self):
-        self.amount = 10000
+        self.amount = 99999999
         self.dailyAmountDeposit = 0
         self.dailyAmountWithdraw = 0
         self.dailyAmountTransfer = 0
