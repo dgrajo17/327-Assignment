@@ -1,6 +1,6 @@
 Status: login
 Status: atm
-Invalid input: Amount should be decimals only
-Invalid input: Amount should be decimals only
-Invalid input: Amount should be decimals only
+Amount should be decimals only
+Amount should be decimals only
+Amount should be decimals only
 Please Login to Begin Transactions

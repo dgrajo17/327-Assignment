@@ -1,5 +1,5 @@
 Status: login
 Status: agent
-Invalid input: Amount should be between 3 and 8 decimal digits
-Invalid input: Amount should be between 3 and 8 decimal digits
+Amount exceeds the deposit limit
+Amount should be decimals only
 Please Login to Begin Transactions

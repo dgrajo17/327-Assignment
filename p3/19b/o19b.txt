@@ -2,5 +2,5 @@ Status: login
 Status: atm
 Transaction Complete (Deposit)
 Transaction Complete (Deposit)
-Invalid input: Amount exceeds the deposit limit
+Amount exceeds the deposit limit
 Please Login to Begin Transactions

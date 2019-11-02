@@ -1,4 +1,4 @@
 Status: login
 Status: atm
-Invalid input: Account number does not exist
+Account number does not exist
 Please Login to Begin Transactions

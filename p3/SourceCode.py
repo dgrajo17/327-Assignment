@@ -284,7 +284,7 @@ class Actions:
                                 self.error.errorMsg("Amount exceeds the deposit limit")
                                 return 0
                         else:
-                            self.error.errorMsg("Amount should be between 3 and 8 decimal digits")
+                            self.error.errorMsg("Amount exceeds the deposit limit")
                             return 0
                     else:
                         self.error.errorMsg("Amount should be decimals only")
@@ -326,7 +326,7 @@ class Actions:
                                 self.error.errorMsg("Amount exceeds the withdrawal limit.")
                                 return 0
                         else:
-                            self.error.errorMsg("Amount should be between 3 and 8 decimal digits")
+                            self.error.errorMsg("Amount exceeds the withdrawal limit.")
                             return 0
                     else:
                         self.error.errorMsg("Amount should be decimals only")
@@ -389,7 +389,7 @@ class Actions:
                     else:
                         return 0
                 else:
-                    self.error.errorMsg("Second account number does not exist")
+                    self.error.errorMsg("Account number does not exist")
                     return 0
             else:
                 return 0

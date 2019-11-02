@@ -1,4 +1,4 @@
 Status: login
 Status: atm
-Transaction Complete (Deposit) 
+Transaction Complete (Deposit)
 Please Login to Begin Transactions

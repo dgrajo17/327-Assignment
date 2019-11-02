@@ -5,5 +5,5 @@ Transaction Complete (Withdraw)
 Transaction Complete (Withdraw)
 Transaction Complete (Withdraw)
 Transaction Complete (Withdraw)
-Invalid input: Amount exceeds the withdrawal limit. 
+Amount exceeds the withdrawal limit.
 Please Login to Begin Transactions

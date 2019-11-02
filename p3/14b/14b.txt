@@ -1,6 +1,6 @@
 login
 agent
-deleteAccount newAccNum newAccName
-deleteAccount newAccNum accName
+deleteAccount 4040404 newAccName
+deleteAccount 1010101 accName
 logout
 exit
