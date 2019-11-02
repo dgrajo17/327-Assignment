@@ -1,4 +1,4 @@
 Status: login
 Status: agent
-Invalid input: Amount exceeds the withdrawal limit.
+Amount should be between 3 and 8 decimal digits
 Please Login to Begin Transactions
