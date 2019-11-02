@@ -1,5 +1,5 @@
 login
 agent
-createAccount exAccNum testName
+createAccount 1234567 testName
 logout
 exit

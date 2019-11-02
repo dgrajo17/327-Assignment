@@ -1,4 +1,5 @@
 Status: login
 Status: agent
+Transaction Complete (Delete Account)
 Transaction Complete (Create Account)
 Please Login to Begin Transactions

@@ -1,5 +1,6 @@
 login
 agent
-createAccount 1234569 testName
+deleteAccount 1234568 testName
+createAccount 1234568 testName
 logout
 exit
