@@ -342,7 +342,7 @@ class Actions:
 
     def transfer(self, action):
         if self.status == "atm":
-            limit = 200000  # from assignment requirements
+            limit = 1000000  # from assignment requirements
         elif self.status == "agent":
             limit = 99999999  # from assignment requirements
         else:
