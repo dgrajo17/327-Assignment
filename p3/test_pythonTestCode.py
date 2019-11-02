@@ -4,7 +4,7 @@ from importlib import reload
 import os
 import io
 import sys
-import SourceCode
+from p3 import SourceCode
 
 path = os.path.dirname(os.path.abspath(__file__))
 
@@ -321,6 +321,17 @@ path = os.path.dirname(os.path.abspath(__file__))
 #     helper(
 #         capsys=capsys,
 #         test_id='11b'
+#     )
+
+# def test_r12a(capsys):
+#     """Testing r2. All required information stored in folder r2.
+
+#     Arguments:
+#         capsys -- object created by pytest to capture stdout and stderr
+#     """
+#     helper(
+#         capsys=capsys,
+#         test_id='12a'
 #     )
 
 # def test_r13a(capsys):
