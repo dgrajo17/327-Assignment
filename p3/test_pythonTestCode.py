@@ -407,16 +407,16 @@ path = os.path.dirname(os.path.abspath(__file__))
 #         test_id='14b'
 #     )
 
-def test_r15a(capsys):
-    """Testing 15a. All required information stored in folder 15a.
+# def test_r15a(capsys):
+    # """Testing 15a. All required information stored in folder 15a.
 
-    Arguments:
-        capsys -- object created by pytest to capture stdout and stderr
-    """
-    helper(
-        capsys=capsys,
-        test_id='15a'
-    )
+    # Arguments:
+        # capsys -- object created by pytest to capture stdout and stderr
+    # """
+    # helper(
+        # capsys=capsys,
+        # test_id='15a'
+    # )
 
 # def test_r15b(capsys):
 #     """Testing 15b. All required information stored in folder 15b.
@@ -648,113 +648,6 @@ def test_r15a(capsys):
 #         capsys=capsys,
 #         test_id='23b'
 #     )
-<<<<<<< HEAD
-# def test_r24a(capsys):
-    # """Testing r2. All required information stored in folder r2. 
-=======
-def test_r24a(capsys):
-    """Testing 24a. All required information stored in folder 24a. 
->>>>>>> b36a5ffb0714ef1986111c8090fc3fcead038d7c
-
-    # Arguments:
-        # capsys -- object created by pytest to capture stdout and stderr
-    # """
-    # helperNoTSF(
-        # capsys=capsys,
-        # test_id='24a'
-    # )
-
-<<<<<<< HEAD
-# def test_r24b(capsys):
-    # """Testing r2. All required information stored in folder r2.
-=======
-def test_r24b(capsys):
-    """Testing 24b. All required information stored in folder 24b.
->>>>>>> b36a5ffb0714ef1986111c8090fc3fcead038d7c
-
-    # Arguments:
-        # capsys -- object created by pytest to capture stdout and stderr
-    # """
-    # helperNoTSF(
-        # capsys=capsys,
-        # test_id='24b'
-    # )
-
-<<<<<<< HEAD
-# def test_r25a(capsys):
-    # """Testing r2. All required information stored in folder r2.
-=======
-def test_r25a(capsys):
-    """Testing 25a. All required information stored in folder 25a.
->>>>>>> b36a5ffb0714ef1986111c8090fc3fcead038d7c
-
-    # Arguments:
-        # capsys -- object created by pytest to capture stdout and stderr
-    # """
-    # helperNoTSF(
-        # capsys=capsys,
-        # test_id='25a'
-    # )
-	
-<<<<<<< HEAD
-# def test_r25b(capsys):
-    # """Testing r2. All required information stored in folder r2.
-=======
-def test_r25b(capsys):
-    """Testing 25b. All required information stored in folder 25b.
->>>>>>> b36a5ffb0714ef1986111c8090fc3fcead038d7c
-
-    # Arguments:
-        # capsys -- object created by pytest to capture stdout and stderr
-    # """
-    # helperNoTSF(
-        # capsys=capsys,
-        # test_id='25b'
-    # )
-
-def test_r26a(capsys):
-    """Testing 26a. All required information stored in folder 26a.
-
-    Arguments:
-        capsys -- object created by pytest to capture stdout and stderr
-    """
-    helperNoTSF(
-        capsys=capsys,
-        test_id='26a'
-    )
-
-def test_r26b(capsys):
-    """Testing 26b. All required information stored in folder 26b.
-
-    Arguments:
-        capsys -- object created by pytest to capture stdout and stderr
-    """
-    helperNoTSF(
-        capsys=capsys,
-        test_id='26b'
-    )
-	
-def test_r26c(capsys):
-    """Testing 26c. All required information stored in folder 26c.
-
-    Arguments:
-        capsys -- object created by pytest to capture stdout and stderr
-    """
-    helperNoTSF(
-        capsys=capsys,
-        test_id='26c'
-    )
-	
-def test_r26d(capsys):
-    """Testing 26d. All required information stored in folder 26d.
-
-    Arguments:
-        capsys -- object created by pytest to capture stdout and stderr
-    """
-    helperNoTSF(
-        capsys=capsys,
-        test_id='26d'
-    )
 
 # def r32a(capsys):
     # """Testing 32a. All required information stored in folder 32a.
