@@ -1,0 +1,6 @@
+login
+agent
+deleteAccount newAccNum newAccName
+deleteAccount newAccNum accName
+logout
+exit

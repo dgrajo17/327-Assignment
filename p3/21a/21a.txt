@@ -1,0 +1,5 @@
+login
+atm
+withdraw 1234567 500
+logout
+exit

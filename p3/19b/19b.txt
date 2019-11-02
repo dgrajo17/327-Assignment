@@ -1,0 +1,8 @@
+login
+atm
+deposit 1234567 200000
+deposit 1234567 200000
+deposit 1234567 200000
+logout
+exit
+

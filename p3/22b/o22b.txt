@@ -1,0 +1,6 @@
+Status: login
+Status: agent
+Invalid input: Amount should be decimals only
+Invalid input: Amount should be decimals only
+Invalid input: Amount should be decimals only
+Please Login to Begin Transactions

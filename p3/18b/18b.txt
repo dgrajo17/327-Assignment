@@ -1,0 +1,7 @@
+login
+agent
+deposit 1234567 100a
+deposit 1234567 10&2
+deposit 1234567 10 29
+logout
+exit

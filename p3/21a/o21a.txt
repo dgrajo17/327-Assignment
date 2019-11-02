@@ -1,0 +1,4 @@
+Status: login
+Status: atm
+Transaction Complete (Withdraw)
+Please Login to Begin Transactions

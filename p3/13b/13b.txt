@@ -1,0 +1,5 @@
+login
+atm
+deleteAccount 1234567 testName
+logout
+exit

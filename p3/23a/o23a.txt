@@ -1,0 +1,17 @@
+Status: login
+Status: atm
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Please Login to Begin Transactions
+Status: login
+Status: atm
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Transaction Complete (Withdraw)
+Please Login to Begin Transactions

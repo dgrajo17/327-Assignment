@@ -67,7 +67,10 @@ class Accounts:
     def accNameAlphaNum(self, string):
         restricted = re.compile(r'[^a-zA-Z0-9" "]')
         string = restricted.search(string)
-        return not bool(string)
+        valid = not bool(string)
+        if string[0] == ' ' or string[len(string)-1] == ' ':
+            valid = 0
+        return valid
 
     # see if account name is valid
     def accNameValid(self, accName, error):
