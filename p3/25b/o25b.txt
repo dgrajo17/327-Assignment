@@ -1,6 +1,6 @@
 Status: login
 Status: atm
-Invalid input: Amount should be between 3 and 8 decimal digits
-Invalid input: Amount should be between 3 and 8 decimal digits
-Invalid input: Amount should be decimals only
+Amount should be decimals only
+Amount should be between 3 and 8 decimal digits
+Amount should be decimals only
 Please Login to Begin Transactions
