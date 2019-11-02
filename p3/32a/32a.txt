@@ -1,0 +1,81 @@
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+login
+atm
+deposit 1234567 1000
+logout
+exit
