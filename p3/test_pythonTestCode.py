@@ -620,6 +620,79 @@ def test_r15a(capsys):
 #         test_id='23b'
 #     )
 
+# def r32a(capsys):
+    # """Testing r2. All required information stored in folder r2.
+
+    # Arguments:
+        # capsys -- object created by pytest to capture stdout and stderr
+    # """
+    # helperNoTSF(
+        # capsys=capsys,
+        # test_id='32a'
+    # )
+	
+# def test_r33a(capsys):
+    # """Testing r2. All required information stored in folder r2.
+
+    # Arguments:
+        # capsys -- object created by pytest to capture stdout and stderr
+    # """
+    # helperNoTSF(
+        # capsys=capsys,
+        # test_id='33a'
+    # )
+# def test_r33b(capsys):
+    # """Testing r2. All required information stored in folder r2.
+
+    # Arguments:
+        # capsys -- object created by pytest to capture stdout and stderr
+    # """
+    # helperNoTSF(
+        # capsys=capsys,
+        # test_id='33b'
+    # )
+# def test_r34a(capsys):
+    # """Testing r2. All required information stored in folder r2.
+
+    # Arguments:
+        # capsys -- object created by pytest to capture stdout and stderr
+    # """
+    # helperNoTSF(
+        # capsys=capsys,
+        # test_id='34a'
+    # )	
+# def r34b(capsys):
+    # """Testing r2. All required information stored in folder r2.
+
+    # Arguments:
+        # capsys -- object created by pytest to capture stdout and stderr
+    # """
+    # helperNoTSF(
+        # capsys=capsys,
+        # test_id='34b'
+    # )
+	
+# def test_r35a(capsys):
+    # """Testing r2. All required information stored in folder r2.
+
+    # Arguments:
+        # capsys -- object created by pytest to capture stdout and stderr
+    # """
+    # helperNoTSF(
+        # capsys=capsys,
+        # test_id='35a'
+    # )	
+#def test_r35b(capsys):
+#    """Testing r2. All required information stored in folder r2.
+#
+#    Arguments:
+#        capsys -- object created by pytest to capture stdout and stderr
+#    """
+#    helperNoTSF(
+#        capsys=capsys,
+#        test_id='35b'
+#    )		
+
 def helper(
         capsys,
         test_id):
