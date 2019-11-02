@@ -273,16 +273,12 @@ class Actions:
                                         self.error) == 1:  # make sure account number is valid ... i don't think we need this one, all it changes is error message
                 if self.account.accNumExists(accNum, self.accountsList) == 1:  # make sure account actually exists
                     if self.account.accNumDecOnly(amount) == True:  # make sure amount is valid
-                        if len(amount) >= 3 and len(amount) <= 8:  # are these supposed to be <= or just <
-                            currentAmount, dailyAmount = self.account.getAccBalance(accNum, 1, self.backendDict)
-                            if int(amount) <= min(limit, currentAmount, (500000 - dailyAmount)):
-                                self.toWrite.append(
-                                    "DEP " + accNum + " " + amount + " " + "0000000" + " " + "***" + "\n")
-                                self.account.updateDailyAmount(accNum, int(amount), 1, self.backendDict)
-                                print("Transaction Complete (Deposit)")
-                            else:
-                                self.error.errorMsg("Amount exceeds the deposit limit")
-                                return 0
+                        currentAmount, dailyAmount = self.account.getAccBalance(accNum, 1, self.backendDict)
+                        if int(amount) <= min(limit, currentAmount, (500000 - dailyAmount)):
+                            self.toWrite.append(
+                                "DEP " + accNum + " " + amount + " " + "0000000" + " " + "***" + "\n")
+                            self.account.updateDailyAmount(accNum, int(amount), 1, self.backendDict)
+                            print("Transaction Complete (Deposit)")
                         else:
                             self.error.errorMsg("Amount exceeds the deposit limit")
                             return 0
@@ -314,17 +310,13 @@ class Actions:
                 if self.account.accNumExists(accNum,
                                              self.accountsList) == 1:  # make sure acc number exists THIS IS THE IMPORTANT CHECK
                     if self.account.accNumDecOnly(amount) == True:  # make sure amount is decimal
-                        if len(amount) >= 3 and len(amount) <= 8:  # are these supposed to be <= or just <
-                            currentAmount, dailyAmount = self.account.getAccBalance(accNum, 2, self.backendDict)
-                            if int(amount) <= min(limit, currentAmount,
-                                                  (500000 - dailyAmount)):  # check all restrictions
-                                self.toWrite.append(
-                                    "WDR " + accNum + " " + amount + " " + "0000000" + " " + "***" + "\n")
-                                self.account.updateDailyAmount(accNum, int(amount), 2, self.backendDict)
-                                print("Transaction Complete (Withdraw)")
-                            else:
-                                self.error.errorMsg("Amount exceeds the withdrawal limit.")
-                                return 0
+                        currentAmount, dailyAmount = self.account.getAccBalance(accNum, 2, self.backendDict)
+                        if int(amount) <= min(limit, currentAmount,
+                                              (500000 - dailyAmount)):  # check all restrictions
+                            self.toWrite.append(
+                                "WDR " + accNum + " " + amount + " " + "0000000" + " " + "***" + "\n")
+                            self.account.updateDailyAmount(accNum, int(amount), 2, self.backendDict)
+                            print("Transaction Complete (Withdraw)")
                         else:
                             self.error.errorMsg("Amount exceeds the withdrawal limit.")
                             return 0
