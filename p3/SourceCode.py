@@ -364,24 +364,24 @@ class Actions:
                                             print("Transaction Complete (Transfer)")
 
                                         else:
-                                            self.error.invalidInputB("Amount exceeds the withdrawal limit.")
+                                            self.error.errorMsg("Amount exceeds the withdrawal limit.")
                                             return 0
                                     else:
-                                        self.error.invalidInputB("Amount should be between 3 and 8 decimal digits")
+                                        self.error.errorMsg("Amount should be between 3 and 8 decimal digits")
                                         return 0
                                 else:
-                                    self.error.invalidInputB("Amount should be decimals only")
+                                    self.error.errorMsg("Amount should be decimals only")
                                     return 0
                             else:
-                                self.error.invalidInputB("Account numbers shouldn't be the same")
+                                self.error.errorMsg("Account numbers shouldn't be the same")
                                 return 0
                         else:
-                            self.error.invalidInputB("Second account number does not exist")
+                            self.error.errorMsg("Second account number does not exist")
                             return 0
                     else:
                         return 0
                 else:
-                    self.error.invalidInputB("First account number does not exist")
+                    self.error.errorMsg("First account number does not exist")
                     return 0
             else:
                 return 0

@@ -1,0 +1,6 @@
+login 
+atm
+transfer 1234567 1234568 500000
+transfer 1234567 1234568 500000
+logout
+exit

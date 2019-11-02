@@ -1,0 +1,5 @@
+Status: login
+Status: atm
+Transaction Complete (Transfer)
+Transaction Complete (Transfer)
+Please Login to Begin Transactions

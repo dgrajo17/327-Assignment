@@ -1,0 +1,5 @@
+Status: login
+Status: atm
+Transaction Complete (Transfer)
+Invalid input: Amount exceeds the withdrawal limit.
+Please Login to Begin Transactions

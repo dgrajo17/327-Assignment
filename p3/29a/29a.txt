@@ -1,0 +1,3 @@
+TEST BY INSPECTION
+Some output TSF files will be manually compared to the assignment description.
+It will be manually entered whether or not this case passed or failed.

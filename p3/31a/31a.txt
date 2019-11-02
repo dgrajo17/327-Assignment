@@ -1,0 +1,2 @@
+#TEST BY INSPECTION:
+#Compare EOS to expected, make sure end of session code is present.
