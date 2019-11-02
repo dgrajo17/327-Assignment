@@ -671,7 +671,27 @@ path = os.path.dirname(os.path.abspath(__file__))
         # test_id='24b'
     # )
 	
+def test_r25a(capsys):
+    """Testing r2. All required information stored in folder r2.
 
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='25a'
+    )
+	
+def test_r25b(capsys):
+    """Testing r2. All required information stored in folder r2.
+
+    Arguments:
+        capsys -- object created by pytest to capture stdout and stderr
+    """
+    helperNoTSF(
+        capsys=capsys,
+        test_id='25b'
+    )
 	
 # def r32a(capsys):
     # """Testing 32a. All required information stored in folder 32a.
