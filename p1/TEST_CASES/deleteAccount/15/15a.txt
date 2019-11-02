@@ -3,4 +3,8 @@ agent
 deleteAccount 1234567 testName
 createacct 1234567 testName
 logout
+login
+agent
+createacct 1234567 testName
+logout
 exit
