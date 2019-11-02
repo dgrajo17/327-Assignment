@@ -73,7 +73,7 @@ class Accounts:
     def accNameValid(self, accName, error):
         if len(accName) >= 3 and len(accName) <= 30:  # make sure name is correct length
             # print("10")
-            if accName[0] != " " or accName[-1] != " ":  # must start and end with acceptable characters
+            if (accName[0] != " ") and (accName[-1] != " "):  # must start and end with acceptable characters
                 # print("11")
                 if self.accNameAlphaNum(accName) == True:
                     return 1
