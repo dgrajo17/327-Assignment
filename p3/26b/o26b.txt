@@ -1,0 +1,4 @@
+Status: login
+Status: atm
+Invalid input: Amount exceeds the withdrawal limit.
+Please Login to Begin Transactions

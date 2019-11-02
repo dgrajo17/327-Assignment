@@ -1,0 +1,5 @@
+login
+agent
+transfer 1234567 1234568 99999999
+logout
+exit

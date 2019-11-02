@@ -1,0 +1,6 @@
+Status: login
+Status: atm
+Invalid input: First account number does not exist
+Invalid input: Second account number does not exist
+Invalid input: First account number does not exist
+Please Login to Begin Transactions
