@@ -3,5 +3,5 @@ Status: agent
 Transaction Complete (Delete Account)
 Account number does not exist
 Account number does not exist
-Account number does not exist
+First account number does not exist
 Please Login to Begin Transactions
