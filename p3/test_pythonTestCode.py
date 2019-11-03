@@ -650,7 +650,7 @@ path = os.path.dirname(os.path.abspath(__file__))
 #     )
 
 # def test_r24a(capsys):
-    # """Testing r2. All required information stored in folder r2. 
+    # """Testing 24a. All required information stored in folder 24a. 
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -661,7 +661,7 @@ path = os.path.dirname(os.path.abspath(__file__))
     # )
 
 # def test_r24b(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 24b. All required information stored in folder 24b.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -672,7 +672,7 @@ path = os.path.dirname(os.path.abspath(__file__))
     # )
 	
 # def test_r25a(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 25a. All required information stored in folder 25a.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -683,7 +683,7 @@ path = os.path.dirname(os.path.abspath(__file__))
     # )
 	
 # def test_r25b(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 25b. All required information stored in folder 25b.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -694,7 +694,7 @@ path = os.path.dirname(os.path.abspath(__file__))
     # )
 	
 # def test_r26a(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 26a. All required information stored in folder 26a.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -705,7 +705,7 @@ path = os.path.dirname(os.path.abspath(__file__))
     # )
 
 # def test_r26b(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 26b. All required information stored in folder 26b.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -716,7 +716,7 @@ path = os.path.dirname(os.path.abspath(__file__))
     # )
 	
 # def test_r26c(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 26c. All required information stored in folder 26c.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -727,7 +727,7 @@ path = os.path.dirname(os.path.abspath(__file__))
     # )
 	
 # def test_r26d(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 26d. All required information stored in folder 26d.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -738,7 +738,7 @@ path = os.path.dirname(os.path.abspath(__file__))
     # )
 		
 def test_r27a(capsys):
-    """Testing r2. All required information stored in folder r2.
+    """Testing 27a. All required information stored in folder 27a.
 
     Arguments:
         capsys -- object created by pytest to capture stdout and stderr
@@ -749,7 +749,7 @@ def test_r27a(capsys):
     )
 	
 # def test_r27b(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 27b. All required information stored in folder 27b.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -760,7 +760,7 @@ def test_r27a(capsys):
     # )
 	
 # def test_r28a(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 28a. All required information stored in folder 28a.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -771,7 +771,7 @@ def test_r27a(capsys):
     # )
 	
 # def test_r28b(capsys):
-    # """Testing r2. All required information stored in folder r2.
+    # """Testing 28b. All required information stored in folder 28b.
 
     # Arguments:
         # capsys -- object created by pytest to capture stdout and stderr
@@ -824,7 +824,7 @@ def test_r27a(capsys):
         # capsys=capsys,
         # test_id='34a'
     # )	
-# def r34b(capsys):
+# def test_r34b(capsys):
     # """Testing 34b. All required information stored in folder 34b.
 
     # Arguments:
