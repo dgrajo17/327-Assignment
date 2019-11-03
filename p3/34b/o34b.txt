@@ -1,4 +1,4 @@
 Status: login
 Status: atm
-Invalid input: deposit  1234567   1000
+Account number must be 7 decimals long
 Please Login to Begin Transactions
