@@ -1,4 +1,4 @@
-login 
+login
 atm
 transfer 1234567 1234568 600000
 transfer 1234567 1234568 600000
