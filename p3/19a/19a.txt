@@ -11,5 +11,4 @@ deposit 1234567 200000
 deposit 1234567 100000
 deposit 1234568 200000
 logout
-
 exit
