@@ -16,7 +16,7 @@ def clearMasterTSF():
 #copy all smaller tsf into mergedTSF
 def mergeTSF():
     tsfLIST = 3
-    for i in range(1,4):
+    for i in range(3,4):
         tsf = open(str("tsf"+str(i)+".txt"),"r")
         lines = tsf.readlines()
         for line in lines:
@@ -221,6 +221,11 @@ def create(accNum, accName):
         if write == 0:
             maf.write(accNum + " " + "000" + " " + accName)
         maf.close()
+        #write to vaf
+        vaf = open("vaf.txt", "a")
+        vaf.write('\n')
+        vaf.write(accNum)
+        vaf.close()
 
 #Delete account
 def delete(accNum):
@@ -242,6 +247,15 @@ def delete(accNum):
         for line in lines:
             maf.write(line)
         maf.close()
+        #delete from vaf
+        vaf = open("vaf.txt", "r")
+        vLines = vaf.readlines()
+        vaf.close()
+        open('vaf.txt', 'w').close()
+        vaf = open("vaf.txt", "w")
+        for vLine in vLines:
+            if str(vLine) != str(accNum):
+                vaf.write(vLine)
     
 
 #def createNewMAF():
