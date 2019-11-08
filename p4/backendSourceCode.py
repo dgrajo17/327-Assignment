@@ -14,8 +14,9 @@ def clearMasterTSF():
     open('mergedTSF.txt', 'w').close()
 
 def mergeTSF():
-    for i in (tsfLIST):
-        tsf = open(str(tsfLIST+i),"r")
+    tsfLIST = 3
+    for i in range(1,tsfLIST):
+        tsf = open(str("tsf"+str(i)+".txt"),"r")
         lines = tsf.readlines()
         for line in lines:
             newTSF = open(str('mergedTSF.txt'),"a")
@@ -24,8 +25,10 @@ def mergeTSF():
                     newTSF.write(line)
             newTSF.close()
         newTSF = open(str('mergedTSF.txt'), "a")
-        newTSF.write("EOS 0000000 000 0000000 ***")
+        #newTSF.write("EOS 0000000 000 0000000 ***") #i don't think we want EOS in the master TSF, we can't do anything with it
         newTSF.close()
+
+
 
 def handleTSF():
     tsf = open('mergedTSF.txt', 'r')
@@ -35,23 +38,29 @@ def handleTSF():
     dailyWithLimit = {}
     dailyTransfLimit = {}
     for line in lines:
-        tsfLine = line.split(" ", 5)
-        action = line[0]
-        accANum = line[1]
-        amount = line[2]
-        accBNum = line[3]
-        accName = line[4]
-        #action = line[:3]
+        #tsfLine = line.split(' ')
+        action = line[:3]
+        accANum = line[4:11]
+        iNEW = line.index(' ', 12)
+        amount = int(line[12:iNEW])
+        iNEW2 = line.index(' ', iNEW+1)
+        accBNum = line[iNEW+1: iNEW2]
+        accName = line[iNEW2+1:]
         if action == 'DEP':
-            deposit(accANum, amount)
+            print ('deposit')
+            #deposit(accANum, amount)
         elif action == 'WDR':
-            withdraw(accANum, amount)
+            print ('withdraw')
+            #withdraw(accANum, amount)
         elif action == 'XFR':
-            transfer(accANum, amount, accBNum)
+            print ('transfer')
+            #transfer(accANum, amount, accBNum)
         elif action == 'NEW':
-            create(accANum, accName)
+            print ('create')
+            #create(accANum, accName)
         elif action == 'DEL':
-            delete()
+            print ('delete')
+            #delete()
 
 def deposit(toAccNum, amount):
     if amount <= 200000:
@@ -135,7 +144,7 @@ def transfer(toAccNum, amount, fromAccNum):
     else:
         print("Exceeded single transfer limit")
 
-def updateAccountsHash()
+def updateAccountsHash():
     maf = open("MAF.txt", "r")
     lines = maf.readlines()
     for line in lines:
@@ -160,6 +169,8 @@ def create(accNum, accName):
 
 
 #mainline
+
 clearMasterTSF()
 mergeTSF()
 handleTSF()
+print ('done')
