@@ -9,10 +9,11 @@
 # Store all accounts that were ever used, alongside their name
 accountsHash = {}
 
-
+#clear mergedTSF file to rewrite to it
 def clearMasterTSF():
     open('mergedTSF.txt', 'w').close()
 
+#copy all smaller tsf into mergedTSF
 def mergeTSF():
     tsfLIST = 3
     for i in range(1,4):
@@ -25,11 +26,10 @@ def mergeTSF():
                     newTSF.write(line)
             newTSF.close()
         newTSF = open(str('mergedTSF.txt'), "a")
-        #newTSF.write("EOS 0000000 000 0000000 ***") #i don't think we want EOS in the master TSF, we can't do anything with it
+        newTSF.write("EOS 0000000 000 0000000 ***")
         newTSF.close()
 
-
-
+#handle the actions that are on the new tsf
 def handleTSF():
     tsf = open('mergedTSF.txt', 'r')
     lines = tsf.readlines()
@@ -47,20 +47,21 @@ def handleTSF():
         accBNum = line[iNEW+1: iNEW2]
         accName = line[iNEW2+1:]
         if action == 'DEP':
-            print ('deposit')
             depositPure(accANum, amount)
         elif action == 'WDR':
-            print ('withdraw')
             withdrawPure(accANum, amount)
         elif action == 'XFR':
-            print ('transfer')
             transferPure(accANum, amount, accBNum)
         elif action == 'NEW':
-            print ('create')
             create(accANum, accName)
         elif action == 'DEL':
-            print ('delete')
             delete(accANum)
+'''
+In addition to the existing deposit/withdraw/transfer functions, I made depositPure, withdrawPure, transferPure.
+These assume that the frontend checked with the backend before sending the transaction to the TSF, which means that
+all information will be correct, and I'm pretty sure this is how we're going to have to do it because the backend doesn't
+update stuff in real time. 
+'''
 
 def deposit(toAccNum, amount):
     if amount <= 200000:
@@ -255,4 +256,3 @@ def delete(accNum):
 clearMasterTSF()
 mergeTSF()
 handleTSF()
-print ('done')
