@@ -15,7 +15,7 @@ def clearMasterTSF():
 
 def mergeTSF():
     tsfLIST = 3
-    for i in range(1,tsfLIST):
+    for i in range(3,4):
         tsf = open(str("tsf"+str(i)+".txt"),"r")
         lines = tsf.readlines()
         for line in lines:
@@ -57,10 +57,10 @@ def handleTSF():
             #transfer(accANum, amount, accBNum)
         elif action == 'NEW':
             print ('create')
-            #create(accANum, accName)
+            create(accANum, accName)
         elif action == 'DEL':
             print ('delete')
-            #delete()
+            delete(accANum)
 
 def deposit(toAccNum, amount):
     if amount <= 200000:
@@ -156,10 +156,31 @@ def updateAccountsHash():
 
 # Use this function if deleted account numbers can be used for create
 def create(accNum, accName):
-    if 'accNum' in accountsHash:
+    if 'accNum' not in accountsHash:
         maf = open("MAF.txt", "a")
         maf.write(accNum + " " + "000" + " " + accName)
         maf.close()
+
+def delete(accNum):
+    maf = open("MAF.txt", "r")
+    lines = maf.readlines()
+    count = 0
+    found = 0
+    for line in lines:
+        tempNum = line[:7]
+        if tempNum == accNum:
+            index = count
+            found = 1
+        count +=1
+    if found ==1:
+        del lines[index]
+        maf.close()
+        open('MAF.txt', 'w').close()
+        maf = open('MAF.txt',"a")
+        for line in lines:
+            maf.write(line)
+        maf.close()
+    
 
 #def createNewMAF():
 #    oldMaf = open('MAF.txt', 'w')
