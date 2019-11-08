@@ -15,7 +15,7 @@ def clearMasterTSF():
 
 def mergeTSF():
     tsfLIST = 3
-    for i in range(3,4):
+    for i in range(1,4):
         tsf = open(str("tsf"+str(i)+".txt"),"r")
         lines = tsf.readlines()
         for line in lines:
@@ -48,13 +48,13 @@ def handleTSF():
         accName = line[iNEW2+1:]
         if action == 'DEP':
             print ('deposit')
-            #deposit(accANum, amount)
+            depositPure(accANum, amount)
         elif action == 'WDR':
             print ('withdraw')
-            #withdraw(accANum, amount)
+            withdrawPure(accANum, amount)
         elif action == 'XFR':
             print ('transfer')
-            #transfer(accANum, amount, accBNum)
+            transferPure(accANum, amount, accBNum)
         elif action == 'NEW':
             print ('create')
             create(accANum, accName)
@@ -144,6 +144,52 @@ def transfer(toAccNum, amount, fromAccNum):
     else:
         print("Exceeded single transfer limit")
 
+#Deposit to account
+#Assumes perfect conditions - checked beforehand?
+def depositPure(accNum, amount):
+    maf = open("MAF.txt", "r")
+    lines = maf.readlines()
+    maf.close()
+    write = 0
+    maf = open("MAF.txt", "w")
+    for line in lines:
+        num = line[:7]
+        i2 = line.index(' ', 9)
+        balance = int(line[8:i2])
+        name = line[i2+1:]
+        if int(num) == int(accNum):
+            newBalance = int(balance) + int(amount)
+            newLine = str(accNum) + ' ' + str(newBalance) + ' ' + str(name)
+            maf.write(newLine)
+        else:
+            maf.write(line)
+
+#Withdraw from account
+#Assumes perfect conditions - checked beforehand?
+def withdrawPure(accNum, amount):
+    maf = open("MAF.txt", "r")
+    lines = maf.readlines()
+    maf.close()
+    write = 0
+    maf = open("MAF.txt", "w")
+    for line in lines:
+        num = line[:7]
+        i2 = line.index(' ', 9)
+        balance = int(line[8:i2])
+        name = line[i2+1:]
+        if int(num) == int(accNum):
+            newBalance = int(balance) - int(amount)
+            newLine = str(accNum) + ' ' + str(newBalance) + ' ' + str(name)
+            maf.write(newLine)
+        else:
+            maf.write(line)
+
+#Transfer - calls deposit and withdraw
+#Assumes perfect conditions - checked beforehand?
+def transferPure(toAccNum, amount, fromAccNum):
+    depositPure(toAccNum, amount)
+    withdrawPure(fromAccNum, amount)
+
 def updateAccountsHash():
     maf = open("MAF.txt", "r")
     lines = maf.readlines()
@@ -155,12 +201,27 @@ def updateAccountsHash():
         accountsHash[mafAccNum] = mafAccName
 
 # Use this function if deleted account numbers can be used for create
+#Create account
 def create(accNum, accName):
+    #this needs to be sorted by account number when we create an account num
     if 'accNum' not in accountsHash:
-        maf = open("MAF.txt", "a")
-        maf.write(accNum + " " + "000" + " " + accName)
+        maf = open("MAF.txt", "r")
+        lines = maf.readlines()
+        maf.close()
+        write = 0
+        open('MAF.txt', 'w').close()
+        maf = open("MAF.txt", "w")
+        for line in lines:
+            tNum = int(line[:7])
+            if int(accNum) < tNum and write == 0:
+                maf.write(accNum + " " + "000" + " " + accName)
+                write = 1
+            maf.write(line)
+        if write == 0:
+            maf.write(accNum + " " + "000" + " " + accName)
         maf.close()
 
+#Delete account
 def delete(accNum):
     maf = open("MAF.txt", "r")
     lines = maf.readlines()
