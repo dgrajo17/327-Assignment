@@ -1,12 +1,4 @@
 #p4 - 327
-# REMINDER - AMOUNTS AND THEIR LIMITS ARE IN DECIMALS - BE SURE TO ADD TWO EXTRA ZEROS
-# WE USE A DICTIONARY (HASHMAP IN PYTHON) TO STORE DAILY TRANSAC LIMITS
-
-# the slides say "A newly created account must have a new unused account number"
-# Does that mean not being currently used or never used at all?
-# If never used at all, we have to use a hashmap to store all account numbers that were used
-# We currently use a hashmap following the above assumption
-# Store all accounts that were ever used, alongside their name
 
 #handle the actions that are on the new tsf
 import sys
