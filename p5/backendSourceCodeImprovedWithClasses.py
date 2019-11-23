@@ -35,7 +35,10 @@ class BackOffice:
 				
 	# Attempts to deposit an amount to an account 
 	def deposit(self,toAccNum, amount):
-		accountActive = self.accountsHash[toAccNum][2]
+		if toAccNum in self.accountsHash:
+			accountActive = self.accountsHash[toAccNum][2]
+		else:
+			accountActive = 0
 		if accountActive == 1:
 			newBal = self.accountsHash[toAccNum][0] + amount
 			# If line length of 47 characters not exceeded with addition
@@ -48,7 +51,10 @@ class BackOffice:
 
 	# Attempts to withdraw an amount from an account 
 	def withdraw(self, fromAccNum, amount):
-		accountActive = self.accountsHash[fromAccNum][2]
+		if fromAccNum in self.accountsHash:
+			accountActive = self.accountsHash[fromAccNum][2]
+		else:
+			accountActive = 0
 		if accountActive == 1:
 			newBal = self.accountsHash[fromAccNum][0] - amount
 			if newBal >= 0:
@@ -61,8 +67,11 @@ class BackOffice:
 
 	# Attempts to transfer an amount between accounts 
 	def transfer(self, toAccNum, amount, fromAccNum):
-		accountInActive = self.accountsHash[toAccNum][2]
-		accountOutActive = self.accountsHash[fromAccNum][2]
+		if toAccNum in self.accountsHash and fromAccNum in self.accountsHash:
+			accountInActive = self.accountsHash[toAccNum][2]
+			accountOutActive = self.accountsHash[fromAccNum][2]
+		else:
+			accountInActive = 0
 		if (accountInActive == 1) and (accountOutActive == 1):
 			newOutBal = self.accountsHash[fromAccNum][0] - amount
 			if newOutBal >= 0:
@@ -81,16 +90,19 @@ class BackOffice:
 	
 	# Creates an account 
 	def create(self, accNum, accName):
-		if accNum not in self.accountsHash:
-			self.accountsHash[accNum] = [0, accName.rstrip(), 1]
+		#if accNum not in self.accountsHash:
+		self.accountsHash[accNum] = [0, accName.rstrip(), 1]
 	
 	# Deletes an account by setting amount to 0 and valid bit to 0
 	def delete(self, accNum, accName):
-		if self.accountsHash[accNum][1] == accName:
-			# Set the balance of the deleted account to 0
-			self.accountsHash[accNum] = [0, self.accountsHash[accNum][1].rstrip(), 0]
+		if accNum in self.accountsHash:
+			if self.accountsHash[accNum][1] == accName:
+				# Set the balance of the deleted account to 0
+				self.accountsHash[accNum] = [0, self.accountsHash[accNum][1].rstrip(), 0]
+			else:
+				print("Failed Constraint: Could not delete account due to incorrect name")
 		else:
-			print("Failed Constraint: Could not delete account due to incorrect name")
+			print("Failed Constraint: Account does not exist")
 
 	# Creates an updated version of the MAF after doing all updates
 	def createNewMAF(self):
