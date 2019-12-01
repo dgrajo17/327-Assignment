@@ -1,6 +1,5 @@
-# 327 QUINTERAC Front End Rapid Prototype (Assignment 2)
+# 327 QUINTERAC Front End Source Cide (Assignment 6 - Merged)
 # The Xtreme Team
-# Oct 18, 2019
 
 import re
 import sys
