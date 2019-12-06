@@ -160,6 +160,13 @@ class Actions:
         #    print(line)
         # Close TSF
         tsf.close()
+        tempTSF = open(str(self.tsfFileName), 'r')
+        lines = tempTSF.readlines()
+        tempTSF.close()
+        mTSF = open('mergedTSF.txt', 'a')
+        for line in lines:
+            mTSF.write(line)
+        mTSF.close()
         #print("\nWelcome")
         print("Please Login to Begin Transactions")  # Added to ensure user knows that they should login
 

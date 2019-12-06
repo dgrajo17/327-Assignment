@@ -10,6 +10,7 @@ class BackOffice:
 		self.mergedTSF = sys.argv[2]  #Merged TSF from command line
 		self.accountsHash = self.initializeHash()
 	
+	'''
 	def mergeTSF(self):
 		print ('hello world')
 		tsfLIST = 3
@@ -28,6 +29,7 @@ class BackOffice:
 		newTSF = open(str('mergedTSF.txt'), "a")
 		newTSF.write("EOS 0000000 000 0000000 ***")
 		newTSF.close()
+	'''
 
 		
 	# Goes through merged TSF and performs the updates specified in the lines by calling
@@ -168,7 +170,7 @@ class BackOffice:
 
 def main():
 	backOfficeObject = BackOffice()
-	backOfficeObject.mergeTSF()
+	#backOfficeObject.mergeTSF()
 	backOfficeObject.handleTSF()
 	backOfficeObject.createNewMAF()
 	backOfficeObject.createNewVAF()
