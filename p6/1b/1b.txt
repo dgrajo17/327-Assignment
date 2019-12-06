@@ -1,0 +1,5 @@
+login
+agent
+createAccount 1234563 Philip
+logout
+exit

@@ -1,0 +1,5 @@
+login
+agent
+createAccount 1234562 Larry
+logout
+exit

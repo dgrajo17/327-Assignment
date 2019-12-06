@@ -29,20 +29,11 @@ def dailyScript(
     # concatenate test_id with .txt
     test_id_txt = test_id + ".txt"
 
-    # concatenate test_id_txt with o
-    out_test_id_txt = "o" + test_id_txt
-
     # read terminal input:
     with open(
             os.path.join(
                 case_folder, test_id_txt)) as rf:  # REPLACE NAME HERE
         terminal_input = rf.read().splitlines()
-
-    # read expected tail portion of the terminal output:
-    with open(
-            os.path.join(
-                case_folder, out_test_id_txt)) as rf:  # REPLACE NAME HERE
-        terminal_output_tail = rf.read().splitlines()
 
     # create a temporary file in the system to store output transactions
     temp_fd, temp_file = tempfile.mkstemp()
@@ -66,6 +57,7 @@ def dailyScript(
     os.close(temp_fd)
     os.remove(temp_file)
 
-dailyScript(
-        test_id='1a'
-    )
+dailyScript(test_id='1a')
+dailyScript(test_id='1b')
+dailyScript(test_id='1c')
+subprocess.call("python backendSourceCode.py newMAF.txt mergedTSF.txt")
