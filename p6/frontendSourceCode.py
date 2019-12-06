@@ -116,6 +116,7 @@ class Actions:
         self.vafFileName = sys.argv[1]  # First command line argument, name of vaf file
         self.tsfFileName = sys.argv[2]  # Second command line argument, name of tsf file
 
+
     # handle input from user
     def handleKeyboardInput(self):
         #action = input("Enter command: ")

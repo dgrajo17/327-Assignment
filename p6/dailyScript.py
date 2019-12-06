@@ -50,8 +50,8 @@ def dailyScript(
 
     # prepare program parameters
     sys.argv = ['frontendSourceCode.py',
-                os.path.join(case_folder, 'vaf.txt'),
-                transaction_summary_file]
+                'newVAF.txt',
+                'TTSF.txt']
 
     # set terminal input
     sys.stdin = io.StringIO(
