@@ -1,0 +1,5 @@
+login
+agent
+deposit 1234560 3000
+logout
+exit

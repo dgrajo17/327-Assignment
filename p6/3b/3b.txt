@@ -1,0 +1,5 @@
+login
+agent
+deleteAccount 1234562 Larry
+logout
+exit

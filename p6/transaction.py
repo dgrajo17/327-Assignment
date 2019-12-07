@@ -50,7 +50,6 @@ def transaction(
 
     # run the program
     # app.main()
-
     frontendSourceCode.main()
 
     # clean up
