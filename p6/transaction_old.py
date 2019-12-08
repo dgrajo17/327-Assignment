@@ -40,36 +40,18 @@ def transaction(
     transaction_summary_file = temp_file
 
     # prepare program parameters
-
-    vaf = open('newVAF.txt', 'r')
-    lines = vaf.readlines()
-    tempvaf = open('tempVAF.txt', 'w+')
-    for line in lines:
-        tempvaf.write(line)
-    tempvaf.close()
-    vaf.close()
-
     sys.argv = ['frontendSourceCode.py',
-                'tempVAF.txt',
-                'TTSF' + test_id + '.txt']
+                'newVAF.txt',
+                'TTSF.txt']
 
     # set terminal input
-    temp = sys.stdin
     sys.stdin = io.StringIO(
         '\n'.join(terminal_input))
-
 
     # run the program
     # app.main()
     frontendSourceCode.main()
-    sys.stdin = temp
-    tempTSF = open('TTSF' + test_id + '.txt', 'r')
-    lines = tempTSF.readlines()
-    tempTSF.close()
-    mTSF = open('mergedTSF.txt', 'a')
-    for line in lines:
-        mTSF.write(line)
-    mTSF.close()
+
     # clean up
     os.close(temp_fd)
     os.remove(temp_file)

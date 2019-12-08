@@ -8,7 +8,9 @@ class BackOffice:
 	def __init__(self):
 		self.MAF = sys.argv[1] # Master Account File from command line
 		self.mergedTSF = sys.argv[2]  #Merged TSF from command line
+		self.day = sys.argv[3]
 		self.accountsHash = self.initializeHash()
+		
 	
 	'''
 	def mergeTSF(self):
@@ -112,8 +114,8 @@ class BackOffice:
 	
 	# Creates an account 
 	def create(self, accNum, accName):
-		#if accNum not in self.accountsHash:
-		self.accountsHash[accNum] = [0, accName.rstrip(), 1]
+		if accNum not in self.accountsHash:
+			self.accountsHash[accNum] = [0, accName.rstrip(), 1]
 	
 	# Deletes an account by setting amount to 0 and valid bit to 0
 	def delete(self, accNum, accName):
@@ -129,7 +131,7 @@ class BackOffice:
 	# Creates an updated version of the MAF after doing all updates
 	def createNewMAF(self):
 		# Create new maf 
-		newMaf = open('newMAF.txt', 'w+')
+		newMaf = open('newMAFday' + self.day +'.txt', 'w+')
 		for i in sorted (self.accountsHash) : 
 			balance = str(self.accountsHash[i][0])
 			# Increase length of the amount to be at least 3 digits like 000
@@ -137,9 +139,8 @@ class BackOffice:
 				balance = '0' + balance
 			string = i + ' ' + balance + ' ' + str(self.accountsHash[i][1])
 			string = string.replace('\n','')
-			newMaf.write(string + '\n')	
-	
-		newMaf.close()	
+			newMaf.write(string + '\n')		
+		newMaf.close()		
 
 	# Create new VAF from only valid accounts
 	def createNewVAF(self):
@@ -148,9 +149,9 @@ class BackOffice:
 		for i in sorted (self.accountsHash) : 
 			# Only write to new VAF
 			if self.accountsHash[i][2] == 1:
-				newVAF.write(i + '\n')	
-		newVAF.write('0000000')		
-		newVAF.close()	
+				newVAF.write(i + '\n')		
+		newVAF.write('0000000')
+		newVAF.close()
 	# Initilize hash table using MAF to dynamically keep track and update account details
 	def initializeHash(self):
 		accountsHash = {}
@@ -162,6 +163,7 @@ class BackOffice:
 			mafAccBal = mafLine[1]
 			mafAccName = mafLine[2]
 			# Associate account name with account number
+
 			accountsHash[mafAccNum] = [int(mafAccBal), mafAccName,1] # Last digit is valid bit
 		maf.close()
 		return accountsHash
